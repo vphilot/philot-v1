@@ -1,0 +1,70 @@
+---
+layout: default
+---
+
+
+<section class="section" id="post-{{ page.title | downcase }}">
+    <div class="container has-padding-lr-1">
+        <div class="columns is-mobile is-multiline is-centered">
+            <div class="column is-8-desktop is-12-mobile">
+                <h1 class="title is-1 has-spacing-sm swup-delay transition-slide">{{ page.title }}</h1>
+                <div class="columns is-mobile is-multiline">
+                    <div class="column is-5-desktop is-6-mobile has-spacing-sm">
+                        <p class="has-spacing-sm is-size-6 has-border-black swup-delay transition-slide">
+                            {{ page.date | date_to_string }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <article class="swup-delay transition-fade">
+            <div class="columns is-mobile is-multiline is-centered">
+                <div class="column is-8-desktop is-12-tablet is-12-mobile">
+                    {{ content }}
+                </div>
+            </div>
+        </article>
+        <div class="columns is-mobile is-multiline is-centered">
+            <div class="column is-8-desktop is-12-mobile">
+                <div class="columns is-mobile is-multiline is-centered">
+                    {% if page.previous.url %}
+                        <div class="column is-4-desktop is-6-mobile">
+                            <a href="{{ page.previous.url }}">
+                                <h1 class="intro title is-4 has-text-weight-light has-line-spacing-tall has-text-left">
+                                    Prev
+                                </h1>
+                                <svg x="0px" y="0px" viewBox="0 0 200 10">
+                                    <polyline points="6,0 1,5 6,10 " />
+                                    <line x1="1" y1="5" x2="200" y2="5" />
+                                </svg>
+                            </a>
+                        </div>
+                    {% else %}
+                        <div class="column is-4-desktop is-hidden-mobile">
+                        </div>
+                    {% endif %}
+                    <div class="column is-4-desktop is-hidden-mobile">
+                    </div>
+                    {% if page.next.url %}
+                        <div class="column is-4-desktop is-6-mobile">
+                            <a href="{{ page.next.url }}">
+                                <h1 class="intro title is-4 has-text-weight-light has-line-spacing-tall has-text-right">
+                                    Next
+                                </h1>
+                                <svg x="0px" y="0px" viewBox="0 0 200 10">
+                                    <polyline points="194,0 199,5 194,10 " />
+                                    <line x1="0" y1="5" x2="199" y2="5" />
+                                </svg>
+                            </a>
+                        </div>
+                    {% else %}
+                        <div class="column is-4-desktop is-hidden-mobile">
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

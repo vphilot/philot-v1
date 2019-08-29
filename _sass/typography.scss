@@ -1,0 +1,118 @@
+//@import url("https://use.typekit.net/pke1rvu.css");
+
+// $termina: neue-haas-grotesk-display, Helvetica, Arial, sans-serif;
+// $weight-book: 500;
+// $weight-black: 900; 
+
+// $secondary-font-family: ibm-plex-mono, Helvetica, Arial, sans-serif;
+// $primary-font-family:  ibm-plex-sans, Helvetica, Arial, sans-serif;
+$weight-light: 200;
+$weight-book: 400;
+$weight-bold: 700;
+$weight-black: 900; 
+
+
+@font-face {
+  font-family: 'hk_groteskbold';
+  src: url('../fonts/hkgrotesk-bold.eot');
+  src: url('../fonts/hkgrotesk-bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/hkgrotesk-bold.woff2') format('woff2'),
+       url('../fonts/hkgrotesk-bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+@font-face {
+  font-family: 'hk_groteskregular';
+  src: url('../fonts/hkgrotesk-regular.eot');
+  src: url('../fonts/hkgrotesk-regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/hkgrotesk-regular.woff2') format('woff2'),
+       url('../fonts/hkgrotesk-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+$secondary-font-family: 'hk_groteskbold', Helvetica, Arial, sans-serif;
+$primary-font-family:  'hk_groteskregular', Helvetica, Arial, sans-serif;
+
+body {
+    font-family: $primary-font-family;
+    font-weight: 400;
+    outline: none !important;
+  
+    &:focus,
+    a {
+      outline: none !important;
+    }
+  
+    & a {
+      color: black;
+    }
+
+    & h1,
+    h2,
+    h3,
+    h4 {
+      font-family: $secondary-font-family;
+      font-weight: $weight-black;
+      letter-spacing: -0.05rem;
+    }
+  
+    & h5 {
+      font-family: $secondary-font-family;
+      font-weight: $weight-book;
+      text-decoration: underline;
+      line-height: 1.6rem;
+      font-size: 1.15rem;
+      letter-spacing: 0.05rem;
+    }
+  
+    // & p {
+
+    // }
+  
+    // & p.is-size-7 {
+    //   font-size: 0.7rem !important;
+    // }
+  
+    & strong {
+      font-family: $primary-font-family;
+      font-weight: $weight-book;
+      position: relative;
+      margin: 1rem 0;
+      background-color: #fff499;
+    }  
+
+    .button{
+      font-family: $secondary-font-family;
+    }
+
+    .has-line-spacing-tall {
+      line-height: 140%;
+    }
+
+    .has-font-primary {
+      font-family: $primary-font-family;
+    }
+
+    .title.is-0 {
+      font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+  p {
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body p.is-size-7 {
+    font-size: 1rem !important;
+    line-height: 1.15rem;
+  }
+}

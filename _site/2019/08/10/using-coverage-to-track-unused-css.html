@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Philot - Using Chrome Dev Tools to track down unused CSS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Maintaining and updating web projects developed by other people has its specificities. Sometimes you’re working on a page or application that has been mainta...">
+
+  <meta property="og:site_name" content="">
+  
+  <meta property="og:title" content="Using Chrome Dev Tools to track down unused CSS">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Maintaining and updating web projects developed by other people has its specificities. Sometimes you’re working on a page or application that has been maintained by several different people over the years and you realize stylesheets can become messy, to say the least. 
+w
+There are great tools out there such as PurgeCSS that will automate this process for us, but when development is made on a CMS and/or you don’t have the time to set up a local developing environment, Chrome Dev Tools is a great alternative.
+
+"/>
+  
+  
+  <meta property="article:published_time" content="2019-08-10T00:00:00-04:00">
+  <meta property="article:author" content="/about/">
+  
+  <meta property="og:url" content="/2019/08/10/using-coverage-to-track-unused-css.html" />
+  
+  <meta itemprop="keywords" content="" />
+  
+  
+   
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script src="/assets/js/swup.js"></script>
+  <script src="/assets/js/app.js"></script>
+</head>
+
+<body>
+  <nav class="swup">
+    <div class="navigation__toggle is-hidden-desktop"></div>
+<nav class="level" id="navigation">
+  <div class="container has-padding-lr-1">
+    <div class="level-left">
+    </div>
+    <div class="level-right is-uppercase">
+      
+      <div class="column is-1-desktop is-size-7 has-spacing-lg has-text-right">
+        <a href="/" >
+          Home
+        </a>
+      </div>
+      
+      <div class="column is-1-desktop is-size-7 has-spacing-lg has-text-right">
+        <a href="/about.html" >
+          About
+        </a>
+      </div>
+      
+      <div class="column is-1-desktop is-size-7 has-spacing-lg has-text-right">
+        <a href="/blog.html" >
+          Blog
+        </a>
+      </div>
+      
+      <div class="column is-1-desktop is-size-7 has-spacing-lg has-text-right">
+        <a href="/works.html" >
+          Work
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</nav>
+    <section class="section" id="header">
+    <div class="container has-padding-lr-1">
+
+        <div class="columns is-mobile is-multiline is-vbaseline">
+            <div class="column is-4-desktop is-8-mobile">
+                <h1 class="title is-1"><a href="/">Vinícius Philot</a></h1>
+            </div>
+            <div class="column is-3-desktop is-8-mobile">
+                <p class="has-spacing-sm is-size-7">Front End Designer and Developer</p>
+            </div>
+            <div class="column is-3-desktop is-6-mobile has-spacing-sm">
+                <a href="mailto:hello@philot.space?subject=Hey%2C%20nice%20web%20page%20you%20have">
+                    <p class="has-spacing-sm is-size-7">hello@philot.space</p>
+                </a>
+                </div>
+            <div class="column is-2-desktop is-12-mobile">
+                <a href="https://www.linkedin.com/in/vphilot/?locale=en_US" target="_blank">
+                    <i class="icon icon-linkedin">&#xf0e1;</i>
+                </a>
+                <a href="https://dribbble.com/vphilot" target="_blank">
+                    <i class="icon icon-dribbble">&#xf17d;</i>
+                </a>
+                <a href="https://twitter.com/vphilot" target="_blank">
+                    <i class="icon icon-twitter">&#xf099;</i>
+                </a>
+                <a href="https://instagram.com/vphilot" target="_blank">
+                    <i class="icon icon-instagram">&#xf16d;</i>
+                </a>
+                <a href="https://github.com/vphilot" target="_blank">
+                    <i class="icon icon-github">&#xf113;</i>
+                </a>
+                <a href="https://codepen.io/vphilot/" target="_blank">
+                    <i class="icon icon-codepen">&#xf32c;</i>
+                </a>
+                <a href="https://open.spotify.com/user/12183629233" target="_blank">
+                    <i class="icon icon-spotify">&#xf1bc;</i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+  </nav>
+  <main class="swup transition-fade"   style="background-color: #f4f4f4" >
+    <section class="section" id="post-using chrome dev tools to track down unused css">
+    <div class="container has-padding-lr-1">
+        <div class="columns is-mobile is-multiline is-centered">
+            <div class="column is-8-desktop is-12-mobile">
+                <h1 class="title is-1 has-spacing-sm swup-delay transition-slide">Using Chrome Dev Tools to track down unused CSS</h1>
+                <div class="columns is-mobile is-multiline">
+                    <div class="column is-5-desktop is-6-mobile has-spacing-sm">
+                        <p class="has-spacing-sm is-size-6 has-border-black swup-delay transition-slide">
+                            10 Aug 2019
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <article class="swup-delay transition-fade">
+            <div class="columns is-mobile is-multiline is-centered">
+                <div class="column is-8-desktop is-12-tablet is-12-mobile">
+                    <p>Maintaining and updating web projects developed by other people has its specificities. Sometimes you’re working on a page or application that has been maintained by several different people over the years and you realize stylesheets can become <em>messy</em>, to say the least. 
+w
+There are great tools out there such as <a href="https://www.purgecss.com/">PurgeCSS</a> that will automate this process for us, but when development is made on a CMS and/or you don’t have the time to set up a local developing environment, Chrome Dev Tools is a great alternative.</p>
+
+<p>Let’s try the process with <a href="https://www.cbc.ca/">cbc.ca</a> just for education purposes. The first step is bringing up the Chrome Dev Tools panel with <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd> (Windows) <kbd>Command</kbd>+<kbd>Option</kbd>+<kbd>I</kbd> (Mac). Click on the <strong>Sources</strong> tab and then open the <strong>Command Menu</strong> wih <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> (Windows) <kbd>Command</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> (Mac), type in and select <em>Show Coverage</em>.</p>
+
+<p>One in the <strong>Coverage Tab</strong> it’s a very simple process: click on the <em>reload</em> button to reload the page and start capturing coverage. The page will reload and the panel will populate with many (sometimes too many) sources. When you click once on an element, its source code will pop up as a tab right above the Coverage tab:</p>
+
+<p><img src="/assets/images/post/using-coverage-to-track-unused-css-1.jpg" alt="the Coverage tab" title="the Coverage tab" /></p>
+
+<p>Throughout the source code, Chrome will highlight with <em>green</em> the rules being applied on the page and with <em>red</em> the unused CSS. On the Coverage tab below, you can see the percentage of unused CSS in relation to the total file size: <strong>94.2 %</strong>. That looks like a lot!</p>
+
+<p>Before we go thinking it’s a matter of deleting every rule that shows up as red, hold my beer for a second. In this case for CBC, the source CSS is very tidy and organized, so it’s easy for us to see that this CSS is a general big bundle for different pages inside their website. Even though this could be a little more modularized for performance matters, it’s a common practice to have this kind of centralized styling process.</p>
+
+<p>A good way of testing this is clicking thought different pages inside their website while looking at the Coverage tab: the percentage of unused CSS will change drastically from one page to the other, and that means that several rules only apply to certain pages/components.</p>
+
+<p>What I mean here is: <strong>Coverage is a great way of finding unused CSS but it needs a lot of testing to avoid errors</strong>. Another example is media queries: many are not being used on Desktop and therefore will show up as red (unused), but we have to be mindful that they will be used in another viewport sizes.</p>
+
+<p>I believe we must make all efforts to serve users only what they need. Combining the Coverage tab with some fine grain testing, I’ve been able to track down thousands of lines of unused CSS and speed up many projects I’ve been working on without the need for third-party tools. It’s a good solution for small scale / short term projects and last-minute optimization.</p>
+
+                </div>
+            </div>
+        </article>
+        <div class="columns is-mobile is-multiline is-centered">
+            <div class="column is-8-desktop is-12-mobile">
+                <div class="columns is-mobile is-multiline is-centered">
+                    
+                        <div class="column is-4-desktop is-6-mobile">
+                            <a href="/2019/07/29/html-email-101-for-web-developers.html">
+                                <h1 class="intro title is-4 has-text-weight-light has-line-spacing-tall has-text-left">
+                                    Prev
+                                </h1>
+                                <svg x="0px" y="0px" viewBox="0 0 200 10">
+                                    <polyline points="6,0 1,5 6,10 " />
+                                    <line x1="1" y1="5" x2="200" y2="5" />
+                                </svg>
+                            </a>
+                        </div>
+                    
+                    <div class="column is-4-desktop is-hidden-mobile">
+                    </div>
+                    
+                        <div class="column is-4-desktop is-6-mobile">
+                            <a href="/2019/08/23/the-best-chrome-extensions-for-web-and-design.html">
+                                <h1 class="intro title is-4 has-text-weight-light has-line-spacing-tall has-text-right">
+                                    Next
+                                </h1>
+                                <svg x="0px" y="0px" viewBox="0 0 200 10">
+                                    <polyline points="194,0 199,5 194,10 " />
+                                    <line x1="0" y1="5" x2="199" y2="5" />
+                                </svg>
+                            </a>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+    <section id="footer" class="container has-padding-1">
+    <div class="columns is-multiline is-centered">
+        <div class="column is-12">
+            <p class="is-size-7 has-text-grey has-spacing-sm">This website was developed with <i class="icon icon-heart-empty">&#xe800;</i> and <a
+                    href="https://github.com" target="_blank" id="footerDisplay">github</a> </p>
+        </div>
+    </div>
+</div>
+  </main>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,94 @@
+---
+layout: default
+---
+
+<section class="section" id="work-{{ page.name | downcase }}">
+    <div class="container has-padding-lr-1">
+        <div class="columns is-mobile is-multiline is-centered">
+            <!-- <div class="column is-4-desktop">
+                    <img src={{ page.featureimg }}>
+            </div> -->
+                <div class="column is-8-desktop is-12-tablet is-12-mobile">
+                <h1 class="title is-0 has-spacing-sm swup-delay transition-slide">{{ page.title }}</h1>
+                <div class="columns is-mobile is-multiline">
+                    <div class="column is-7-desktop is-8-mobile">
+                        <p class="has-spacing-sm is-size-6 has-border-black is-paddingless-b swup-delay transition-slide">
+                            {{ page.category }}</p>
+                    </div>
+                    <div class="column is-2-desktop is-6-mobile has-spacing-sm">
+                        <p class="has-spacing-sm is-size-6 has-border-black is-paddingless-b swup-delay transition-slide">{{ page.year }}
+                        </p>
+                    </div>
+                    {% if page.external %}
+                    <div class="column is-3-desktop is-6-mobile has-spacing-sm">
+                        <p class="has-spacing-sm is-size-6 has-border-black swup-delay transition-slide">
+                            <a href="{{ page.external }}" target="_blank">
+                                See it live <i class="icon icon-right-open-mini">&#xe801;</i></a></p>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="columns is-mobile is-multiline">
+                    <div class="column is-12-desktop is-12-mobile">
+                        <p class="has-spacing-sm is-size-7 swup-delay transition-slide">
+                            
+                            Tools: {{ page.tools }} 
+                            {% if page.libraries %}
+                            <br> 
+                             Libraries: {{ page.libraries }}
+                            {% endif %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <article class="swup-delay transition-fade">
+            <div class="columns is-mobile is-multiline is-centered">
+                <div class="column is-8-desktop is-12-tablet is-12-mobile">
+                    {{ content }}
+                </div>
+            </div>
+        </article>
+
+        <div class="columns is-mobile is-multiline is-centered">
+                <div class="column is-8-desktop is-12-tablet is-12-mobile">
+                    <div class="columns is-mobile is-multiline is-centered">
+                        {% if page.previous.url %}
+                            <div class="column is-4-desktop is-6-mobile">
+                                <a href="{{ page.previous.url }}">
+                                    <h1 class="intro title is-4 has-text-weight-light has-line-spacing-tall has-text-left">
+                                        Prev
+                                    </h1>
+                                    <svg x="0px" y="0px" viewBox="0 0 200 10">
+                                        <polyline points="6,0 1,5 6,10 " />
+                                        <line x1="1" y1="5" x2="200" y2="5" />
+                                    </svg>
+                                </a>
+                            </div>
+                        {% else %}
+                            <div class="column is-4-desktop is-hidden-mobile">
+                            </div>
+                        {% endif %}
+                        <div class="column is-4-desktop is-hidden-mobile">
+                        </div>
+                        {% if page.next.url %}
+                            <div class="column is-4-desktop is-6-mobile">
+                                <a href="{{ page.next.url }}">
+                                    <h1 class="intro title is-4 has-text-weight-light has-line-spacing-tall has-text-right">
+                                        Next
+                                    </h1>
+                                    <svg x="0px" y="0px" viewBox="0 0 200 10">
+                                        <polyline points="194,0 199,5 194,10 " />
+                                        <line x1="0" y1="5" x2="199" y2="5" />
+                                    </svg>
+                                </a>
+                            </div>
+                        {% else %}
+                            <div class="column is-4-desktop is-hidden-mobile">
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</section>

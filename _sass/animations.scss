@@ -1,0 +1,67 @@
+.has-home-hover-animation {
+  position: relative;
+  overflow: hidden;
+}
+
+.has-home-hover-animation::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #eeeded ;
+  background-size: cover;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  animation: hoverOut 0.45s cubic-bezier(0.86, 0, 0.07, 1) forwards ;
+}
+
+.has-home-hover-animation:hover::before {
+  animation: hoverIn 0.45s cubic-bezier(0.86, 0, 0.07, 1) forwards ;
+}
+
+@keyframes hoverIn {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+    transform-origin: top;
+    transform: scale(1, 0);
+  }
+  99% {
+    opacity: 1;
+    transform-origin: top;
+    transform: scale(1, 1);
+  }
+  100% {
+    opacity: 1;
+    transform-origin: bottom;
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes hoverOut {
+  0% {
+    opacity: 1;
+    transform-origin: bottom;
+    transform: scale(1, 1);
+  }
+  99% {
+    opacity: 1;
+    transform-origin: bottom;
+    transform: scale(1, 0);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+// .has-home-hover-animation:hover h1 {
+//   text-shadow: 2px 0 2px #B7FCD9, 4px 0 2px #B7D4FC, -2px 0 2px #FCC3B7;
+// }
+//USER BORDERS WITH SLIDE TRANSITION

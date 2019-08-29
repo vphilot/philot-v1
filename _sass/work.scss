@@ -1,0 +1,24 @@
+[id^="work"] article p {
+    margin-bottom: 1.5rem;
+    line-height: 1.75rem;
+}
+
+line, polyline {
+    fill: none;
+    stroke: black;
+    stroke-width: 1px;
+}
+				
+@media screen and (max-width: 768px) {
+    [id^="work"] p { 
+      font-size: 1.2rem;
+      line-height: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    line, polyline {
+      stroke-width: 0.5px;
+  }
+  }
+  
+			

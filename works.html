@@ -1,0 +1,53 @@
+---
+layout: default
+title: Works
+bgcolor: '#eeeeee'
+---
+
+<section class="section" id="all-works">
+    <div class="container has-padding-lr-1">
+
+        <div class="columns is-mobile is-multiline">
+
+            {% assign works = site.works | sort: 'order' | reverse%}
+
+            <div class="column is-12">
+                <h1 class="title is-0 has-spacing-sm has-padding-b-1">All Works</h1>
+            </div>
+            {% for work in works %}
+            <div class="column is-12 swup-delay transition-fade card-work">
+                <div class="columns is-mobile is-multiline is-vcentered">
+                    <div class="column is-5-desktop is-12-tablet is-12-mobile">
+                        <a href="{{ work.url }}"><img src="{{ work.featureimg }}"></a>
+                    </div>
+                    <div
+                        class="column is-1-desktop is-12-tablet is-12-mobile has-horizontal-line is-hidden-mobile is-hidden-tablet-only">
+                    </div>
+                    <div class="column is-5-desktop is-12-mobile">
+                        <h1 class="title is-1 has-text-weight-light has-spacing-sm has-padding-t-4">
+                            <a href="{{ work.url }}">
+                                {{ work.title }}
+                            </a>
+                        </h1>
+                        <div class="columns is-mobile is-multiline has-spacing-sm">
+                            <div class="column is-8-desktop">
+                                <p class="is-size-7 has-border-black">{{ work.category }}</p>
+                            </div>
+                            <div class="column is-2-desktop">
+                                <p class="is-size-7 has-border-black">{{ work.year }}</p>
+                            </div>
+                            <div class="column is-2-desktop">
+                                <p class="is-size-7 has-border-black"><a href="{{ work.url }}">Read</a>
+                                    <i class="icon icon-right-open-mini">&#xe801;</i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+</section>

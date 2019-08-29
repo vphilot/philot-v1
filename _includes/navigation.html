@@ -1,0 +1,16 @@
+<div class="navigation__toggle is-hidden-desktop"></div>
+<nav class="level" id="navigation">
+  <div class="container has-padding-lr-1">
+    <div class="level-left">
+    </div>
+    <div class="level-right is-uppercase">
+      {% for item in site.data.navigation %}
+      <div class="column is-1-desktop is-size-7 has-spacing-lg has-text-right">
+        <a href="{{ item.link }}" {% if page.url == item.link %} class="current" {% endif %}>
+          {{ item.name }}
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</nav>

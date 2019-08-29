@@ -1,0 +1,135 @@
+.current {
+    font-weight: bold;
+}
+
+p > a {
+  text-decoration: underline;
+  text-decoration-color: lightgray;
+}
+
+@media screen and (min-width: 768px) {
+/* reverse column order implementation */
+.reverse-row-order-desktop{
+  flex-direction:row-reverse;
+ }
+}
+
+/* fig captions */
+img + em {
+  font-size: 0.8rem;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  /* ---- mobile navigation ---- */
+  #navigation {
+    max-height: 0vh;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    transition: max-height 1s;
+
+    & .level-left + .level-right {
+      margin: 0;
+    }
+
+    & .has-text-right {
+      text-align: left !important;
+    }
+    & .is-size-7 > a {
+      font-size: 1rem;
+      margin-left: 2rem;
+    }
+    & .column {
+    //  border-bottom: 1px solid black;
+    }
+}
+
+  #navigation.is-active {
+    max-height: 50vh;
+
+    height: auto;
+    transition: max-height 1s;
+  }
+
+  .navigation__toggle {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .navigation__toggle::before, .navigation__toggle::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0px;
+    height: 40px;
+    transform-origin: center center;
+    border-left: 2px solid black;
+    //transition: transform 1s;
+  }
+
+  .navigation__toggle::before {
+    transform: translate(-50%, 50%) rotateZ(90deg);
+    animation: navigationBeforeOut 1s forwards;
+
+    }
+  .navigation__toggle::after {
+    transform: translateX(-50%) rotateZ(90deg);
+    animation: navigationAfterOut 0.5s forwards;
+  }
+
+  .navigation__toggle.is-active::before{
+    //transition: transform 1s;
+    animation: navigationBeforeIn 1s forwards;
+  }
+  .navigation__toggle.is-active::after{
+    //transition: transform 1s;
+    animation: navigationAfterIn 0.5s forwards 0.5s;
+  }
+}
+
+@keyframes navigationBeforeIn {
+  0% {
+    transform: translate(-50%, 50%) rotateZ(90deg);
+  }
+  50% {
+    transform: translateX(-50%) rotateZ(90deg);  
+  }
+  100% {
+    transform: translateX(-50%) rotateZ(-45deg);  
+  }
+}
+
+@keyframes navigationBeforeOut {
+  0% {
+    transform: translateX(-50%) rotateZ(-45deg);  
+  }
+  50% {
+    transform: translateX(-50%) rotateZ(90deg);  
+  }
+  100% {
+    transform: translate(-50%, 50%) rotateZ(90deg);
+  }
+}
+
+@keyframes navigationAfterIn {
+  100% {
+    transform: translateX(-50%) rotateZ(45deg);
+  }
+}
+
+@keyframes navigationAfterOut {
+  0% {
+    transform: translateX(-50%) rotateZ(45deg);
+  }
+  100% {
+    transform: translateX(-50%) rotateZ(90deg);
+
+  }
+}
+
+

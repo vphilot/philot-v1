@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+<section class="section swup-delay" id="about">
+    <div class="container has-padding-lr-1">
+        <div class="columns is-mobile is-multiline is-centered">
+            <div class="column is-6-desktop is-10-tablet is-12-mobile">
+                <h1 class="title is-0 has-spacing-sm">About</h1>
+                <div class="columns is-mobile is-multiline has-spacing-sm">
+                    <div class="column is-12-desktop is-12-tablet is-12-mobile has-margin-b-4">
+                        <p class="is-block is-size-3 has-border-black has-margin-b-7">profile</p>
+                        <p>{{ page.profile }} <i class="icon icon-download is-small">&#xE803;</i> <a href="/assets/docs/2019-viniciusphilot-resume.pdf">
+                             download my resume.
+                        </a></p>
+                       
+                    </div>
+                    <div class="column is-12-desktop is-12-tablet is-12-mobile has-margin-b-4">
+                        <p class="is-block is-size-3 has-border-black has-margin-b-7">motto</p>
+                        <p>{{ page.motto }}</p>
+                    </div>
+                    <div class="column is-12-desktop is-12-tablet is-12-mobile has-margin-b-4">
+                        <p class="is-block is-size-3 has-border-black has-margin-b-7">bg</p>
+                        <p>{{ page.bg }}</p>
+                    </div>
+                    <div class="column is-12-desktop is-12-tablet is-12-mobile has-margin-b-4">
+                        <p class="is-block is-size-3 has-border-black has-margin-b-7">tools</p>
+                        <p>
+                            {% for tool in page.tools %}
+                            {{ tool }}
+                            {% if forloop.last == false %}
+                            ,
+                            {% endif %}
+                            {% endfor %}
+                        </p>
+                    </div>
+                </div>
+                <div class="columns is-mobile is-multiline has-spacing-sm" id="instagram">
+                </div>
+                <h1 class="title is-1 has-spacing-sm has-padding-t-5">Little known facts</h1>
+
+                <div class="columns is-mobile is-multiline">
+
+                    <div class="column is-12-desktop is-12-tablet is-12-mobile">
+                        {% for fact in page.facts %}
+                        <p class="has-spacing-sm has-padding-b-7">{{ fact }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

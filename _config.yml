@@ -1,0 +1,34 @@
+
+markdown: kramdown
+highlighter: rouge
+
+exclude: ['assets/design', 'package.json', 'package-lock.json', 'README.md', 'gulpfile.js', 'Gemfile', 'Gemfile.lock', 'node_modules']
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+collections:
+  works:
+    output: true
+  snippets:
+    output: true
+  
+defaults:
+  - scope:
+      path: ""
+      type: "works"
+    values:
+      layout: "work"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Server Config optiosn
+#livereload: true    # You no longer need to include --livereload
