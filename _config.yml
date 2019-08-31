@@ -3,6 +3,7 @@ markdown: kramdown
 highlighter: rouge
 
 exclude: ['assets/design', 'package.json', 'package-lock.json', 'README.md', 'gulpfile.js', 'Gemfile', 'Gemfile.lock', 'node_modules']
+keep_files: ['assets']
 
 kramdown:
   input: GFM
@@ -30,5 +31,5 @@ defaults:
     values:
       layout: "default"
 
-# Server Config optiosn
+# Server Config options
 #livereload: true    # You no longer need to include --livereload

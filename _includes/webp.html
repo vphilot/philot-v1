@@ -1,0 +1,16 @@
+<picture>
+    {% assign ext = include.legacy | split: "." | last %}
+    <source type="image/webp" srcset="{{ include.webp }}" />
+    <source type=
+    {% if ext == "jpg" %}
+    "image/jpeg" 
+    {% elsif ext == "png" %}
+    "image/png"
+    {% endif %}
+    srcset="{{ include.legacy }}">
+    <img src="{{ include.legacy }}" alt="{{ include.alt }}" title="{{ include.alt }}" />
+</picture>
+{% if include.img_caption == true %}
+<em>{{ include.alt }}</em>
+{% endif %}
+

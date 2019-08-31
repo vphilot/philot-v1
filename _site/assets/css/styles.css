@@ -9390,7 +9390,7 @@ p > a {
   .reverse-row-order-desktop {
     flex-direction: row-reverse; } }
 /* fig captions */
-img + em {
+picture + p em {
   font-size: 0.8rem; }
 
 @media screen and (max-width: 768px) {

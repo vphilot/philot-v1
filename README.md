@@ -25,6 +25,7 @@ brew install imagemagick
 #### Development
 
 ```console
+gulp images
 gulp serve
 ```
 #### Production

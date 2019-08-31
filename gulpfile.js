@@ -14,7 +14,7 @@ var gulp = require('gulp'),
 gulp.task('serve', function() {
   return gulp.src('index.html', { read: false })
     .pipe(shell([
-      'bundle exec jekyll serve'
+      'bundle exec jekyll serve --livereload'
   ]));
 });
 
@@ -58,9 +58,8 @@ var imgFolders = [`${rootImgFolder}/work/`, `${rootImgFolder}/home/`, `${rootImg
 });
 
 gulp.task('webp', function () {
-  return gulp.src('src/image.jpg')
-    
-    .pipe(gulp.dest('dist'))
+  return gulp.src('src/*')
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('purgecss', () => {
