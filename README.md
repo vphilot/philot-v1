@@ -19,6 +19,7 @@ cd jekyll-playground
 bundle install
 npm install --global gulp-cli
 npm install
+brew install imagemagick
 ```
 
 #### Development

@@ -8,7 +8,8 @@ var gulp = require('gulp'),
     gm = require('gulp-gm'),
     purgecss = require('gulp-purgecss'),
     merge = require('merge-stream'),
-    babel = require('gulp-babel');
+    babel = require('gulp-babel'),
+    webp = require('gulp-webp');
 
 gulp.task('serve', function() {
   return gulp.src('index.html', { read: false })
@@ -25,17 +26,20 @@ gulp.task('jekyll-build', function() {
   });
 
   // needs both ImageMagick and GraphicsMagick installed!!
-  var imgFolders = ['_site/assets/images/work/sonar/', '_site/assets/images/work/ypt/', '_site/assets/images/work/refoodgees/'];
+const rootImgFolder = '_site/assets/images';
+var imgFolders = [`${rootImgFolder}/work/`, `${rootImgFolder}/home/`, `${rootImgFolder}/post/`];
 
   gulp.task('images', function () {
 
     var tasks = imgFolders.map(function(element){
       return gulp.src(element + '*')
       .pipe(gm(function (gmfile) {
+        console.log(gmfile.source);
         return gmfile.resize(800);
       },{
         imageMagick: true
       }))
+      .pipe(webp())
       .pipe(imagemin({
           progressive: true,
           svgoPlugins: [{removeViewBox: false}],
@@ -43,7 +47,6 @@ gulp.task('jekyll-build', function() {
               quality: [0, 0],
               speed: 1,
               dithering: 1
-          
           }), 
           jpegtran(), optipng(), gifsicle()]
       }))
@@ -52,6 +55,12 @@ gulp.task('jekyll-build', function() {
 
     return merge(tasks);
 
+});
+
+gulp.task('webp', function () {
+  return gulp.src('src/image.jpg')
+    
+    .pipe(gulp.dest('dist'))
 });
 
 gulp.task('purgecss', () => {
