@@ -17,7 +17,6 @@ order: 1
 webp = "../assets/images/work/sd-1.webp"
 legacy = "../assets/images/work/sd-1.png"
 alt = "Sónar +D"
-caption = false
 %}
 
 The Sónar +D 2018 website works as a Single Page Application that can transfer data and update its elements based on user input. For the View components, I'm using a very straightforward implementation of HTML5, SASS, and Javascript. Thanks to Vincent Garreau for the amazing [Particles.js](https://vincentgarreau.com/particles.js/ "Particles.js") library that allowed me to implement a randomly generated particle background for the home screen.
@@ -26,7 +25,6 @@ The Sónar +D 2018 website works as a Single Page Application that can transfer 
 webp = "../assets/images/work/sd-2.webp"
 legacy = "../assets/images/work/sd-2.png"
 alt = "Sónar +D"
-caption = false
 %}
 
 
@@ -36,7 +34,6 @@ When communicating the state of users' choices (attending, not attending), I use
 webp = "../assets/images/work/sd-3.webp"
 legacy = "../assets/images/work/sd-2.png"
 alt = "Sónar +D"
-caption = false
 %}
 
 I developed the UX/ Visual Design system along with the web development itself, which is pretty unusual but I had to pull off due to time constraints. I wanted the website to act as a frame for its content, in a very simple and minimalistic fashion. I believe the final outcome speaks edgy and forward-thinking, reflecting exactly the values of what Sónar is all about.

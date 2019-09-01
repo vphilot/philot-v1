@@ -19,7 +19,6 @@ Young People's Theatre gives the opportunity to many actors, children, and schoo
 webp = "../assets/images/work/ypt-1.webp"
 legacy = "../assets/images/work/ypt-1.png"
 alt = "Young People's Theatre screens"
-caption = false
 %}
 
 They liked the website at a first glance, but after a few minutes, they became so frustrated to the point of simply giving up. The outcomes of this process were fundamental to build a comprehensive set of constraints and guidelines for the upcoming UI overhaul.
@@ -28,7 +27,6 @@ They liked the website at a first glance, but after a few minutes, they became s
 webp = "../assets/images/work/ypt-2.webp"
 legacy = "../assets/images/work/ypt-2.png"
 alt = "Young People's Theatre screens"
-caption = false
 %}
 
 My goal with this process was to provide consistency and continuity to users. They should be able to know where they're at, where they came from, and where they'll go to next. There are hooks implemented in the interface to depict this connection between one page and the other (I did not opt for breadcrumbs though as I don't think they look elegant on a mobile display). By doing so, at least half of the frustration would be ditched away and the rest could be dealt with information accessibility and whitespace.
@@ -37,7 +35,6 @@ My goal with this process was to provide consistency and continuity to users. Th
 webp = "../assets/images/work/ypt-3.webp"
 legacy = "../assets/images/work/ypt-3.png"
 alt = "Young People's Theatre screens"
-caption = false
 %}
 
 Providing feedback on every single step was also fundamental. Users should know whether an action is accomplished, pending, or canceled. I created a set of components using this blobby shape to try and create visual interest in the pages while maintaining the key sections as simple and clean as possible
@@ -46,5 +43,4 @@ Providing feedback on every single step was also fundamental. Users should know 
 webp = "../assets/images/work/ypt-4.webp"
 legacy = "../assets/images/work/ypt-4.png"
 alt = "Young People's Theatre screens"
-caption = false
 %}
