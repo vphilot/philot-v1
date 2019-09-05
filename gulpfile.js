@@ -39,7 +39,13 @@ var imgFolders = [`${rootImgFolder}/work/`, `${rootImgFolder}/home/`, `${rootImg
       },{
         imageMagick: true
       }))
-      .pipe(webp())
+        .pipe(webp(
+          { 
+          //web options here
+          quality: 100,
+          sns: 0
+        }
+        ))
       .pipe(imagemin({
           progressive: true,
           svgoPlugins: [{removeViewBox: false}],
@@ -55,11 +61,6 @@ var imgFolders = [`${rootImgFolder}/work/`, `${rootImgFolder}/home/`, `${rootImg
 
     return merge(tasks);
 
-});
-
-gulp.task('webp', function () {
-  return gulp.src('src/*')
-    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('purgecss', () => {

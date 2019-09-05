@@ -1,6 +1,6 @@
-# jekyll-playground
+# philot
 
-Front-end for the upcoming revamp of https://philot.space
+https://philot.space
 
 ## Made with
 
@@ -33,3 +33,5 @@ gulp serve
 ```console
 gulp build
 ```
+
+has to use Bundle v 2.0.1 due to Netlify incompatibility with latest version
