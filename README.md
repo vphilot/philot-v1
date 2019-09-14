@@ -8,7 +8,7 @@ https://philot.space
 - [Bulma](https://bulma.io)
 - [Swup](https://github.com/gmrchk/swup)
 - [Gulp](https://gulpjs.com/)
-- [gulp-gm](https://github.com/scalableminds/gulp-gm)
+- [gulp-image](https://github.com/1000ch/gulp-image)
 - [purgecss](https://www.purgecss.com/)
 
 ### Installation
@@ -19,7 +19,7 @@ cd jekyll-playground
 bundle install
 npm install --global gulp-cli
 npm install
-brew install imagemagick
+brew install libjpeg libpng
 ```
 
 #### Development

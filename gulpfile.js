@@ -10,6 +10,7 @@ var gulp = require('gulp'),
     merge = require('merge-stream'),
     babel = require('gulp-babel'),
     webp = require('gulp-webp');
+    image = require('gulp-image');
 
 gulp.task('serve', function() {
   return gulp.src('index.html', { read: false })
@@ -25,43 +26,45 @@ gulp.task('jekyll-build', function() {
     ]));
   });
 
-  // needs both ImageMagick and GraphicsMagick installed!!
 const rootImgFolder = '_site/assets/images';
-var imgFolders = [`${rootImgFolder}/work/`, `${rootImgFolder}/home/`, `${rootImgFolder}/post/`];
+var imgFolders = [`${rootImgFolder}/work/`, `${rootImgFolder}/post/`];
 
-  gulp.task('images', function () {
-
-    var tasks = imgFolders.map(function(element){
-      return gulp.src(element + '*')
-      .pipe(gm(function (gmfile) {
-        console.log(gmfile.source);
-        return gmfile.resize(800);
-      },{
-        imageMagick: true
+gulp.task('compressImages', () => {
+  var _compressImages = imgFolders.map((element) => {
+    return gulp.src(element + '*')
+      .pipe(image({
+        pngquant: true,
+        optipng: false,
+        zopflipng: true,
+        jpegRecompress: false,
+        mozjpeg: true,
+        guetzli: false,
+        gifsicle: true,
+        svgo: true,
+        concurrent: 10,
+        quiet: true // defaults to false
       }))
-        .pipe(webp(
-          { 
-          //web options here
-          quality: 100,
-          sns: 0
-        }
-        ))
-      .pipe(imagemin({
-          progressive: true,
-          svgoPlugins: [{removeViewBox: false}],
-          use: [pngquant({
-              quality: [0, 0],
-              speed: 1,
-              dithering: 1
-          }), 
-          jpegtran(), optipng(), gifsicle()]
+      .pipe(gulp.dest(element));
+  });
+
+  return merge(_compressImages);
+});
+
+gulp.task('convertToWebp', () => {
+    var _convertToWebp = imgFolders.map((element) => {
+      return gulp.src(element + '*')
+      .pipe(webp({
+        quality: 10,
+        sns: 0
       }))
       .pipe(gulp.dest(element));
     });
-
-    return merge(tasks);
-
+  return merge(_convertToWebp);
 });
+
+gulp.task('images', gulp.series('compressImages', 'convertToWebp', function (done) {
+  done();
+}));
 
 gulp.task('purgecss', () => {
   return gulp
