@@ -11,6 +11,14 @@ https://philot.space
 - [gulp-image](https://github.com/1000ch/gulp-image)
 - [purgecss](https://www.purgecss.com/)
 
+### Pre-install
+
+```console
+brew install imagemagick
+brew install graphicsmagick
+brew install libjpeg libpng
+```
+
 ### Installation
 
 ```console
@@ -19,13 +27,11 @@ cd jekyll-playground
 bundle install
 npm install --global gulp-cli
 npm install
-brew install libjpeg libpng
 ```
 
 #### Development
 
 ```console
-gulp images
 gulp serve
 ```
 #### Production

@@ -1,11 +1,5 @@
 var gulp = require('gulp'),
     shell = require('gulp-shell'),
-    imagemin = require('gulp-imagemin'),
-    pngquant = require('imagemin-pngquant'),
-    jpegtran = require('imagemin-jpegtran'),
-    gifsicle = require('imagemin-gifsicle'),
-    optipng = require('imagemin-optipng'),
-    gm = require('gulp-gm'),
     purgecss = require('gulp-purgecss'),
     merge = require('merge-stream'),
     babel = require('gulp-babel'),
@@ -31,7 +25,7 @@ var imgFolders = [`${rootImgFolder}/work/`, `${rootImgFolder}/post/`];
 
 gulp.task('compressImages', () => {
   var _compressImages = imgFolders.map((element) => {
-    return gulp.src(element + '*')
+    return gulp.src(element + '*.{jpg,png}')
       .pipe(image({
         pngquant: true,
         optipng: false,
@@ -52,7 +46,7 @@ gulp.task('compressImages', () => {
 
 gulp.task('convertToWebp', () => {
     var _convertToWebp = imgFolders.map((element) => {
-      return gulp.src(element + '*')
+      return gulp.src(element + '*.{jpg,png}')
       .pipe(webp({
         quality: 10,
         sns: 0
@@ -89,3 +83,10 @@ gulp.task("babel", function () {
 gulp.task('build', gulp.series('jekyll-build', 'images', 'purgecss', 'babel', function (done) {
     done();
 }));
+
+//TODO IMPLEMENT MINIFY CSS AND JS
+//TODO STILL NEED TO RESIZE IMAGES -- TOO BIG
+//TODO USE GULP-RESPONSIVE TO BUILD SRCSET
+
+
+
