@@ -10,8 +10,8 @@ tools:
   - JavaScript
   - Vue
   - React
+  - Sketch
   - XD
-  - Figma
 facts: 
   - ! Brazilian, born in a <a href="https://goo.gl/maps/LevuqobMVP5SAVeP8">tiny little town</a> amid the Atlantic Rainforest, grandson of farmers, and proud of every single tiny victory I've accomplished.
   - I was a certified Architect abroad (with a Masters!) before moving to the Creative Technology field. I carry a lot of analytical thinking and design strategy/planning from the great experiences I had back then.

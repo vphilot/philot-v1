@@ -28,7 +28,7 @@ layout: default
                         <p>
                             {% for tool in page.tools %}
                             {{ tool }}
-                            {% if forloop.last == false %}
+                            {%- if forloop.last == false -%}
                             ,
                             {% endif %}
                             {% endfor %}
