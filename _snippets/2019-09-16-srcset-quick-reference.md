@@ -1,5 +1,5 @@
 --- 
-title: Srcset with Picture Quick Reference
+title: Srcset with Picture Quick Reference (updated)
 layout: post
 author: Vinicius Philot
 bgcolor: "#f4f4f4"

@@ -48,7 +48,7 @@ gulp.task('convertToWebp', () => {
     var _convertToWebp = imgFolders.map((element) => {
       return gulp.src(element + '*.{jpg,png}')
       .pipe(webp({
-        quality: 10,
+        quality: 50,
         sns: 0
       }))
       .pipe(gulp.dest(element));
@@ -87,6 +87,7 @@ gulp.task('build', gulp.series('jekyll-build', 'images', 'purgecss', 'babel', fu
 //TODO IMPLEMENT MINIFY CSS AND JS
 //TODO STILL NEED TO RESIZE IMAGES -- TOO BIG
 //TODO USE GULP-RESPONSIVE TO BUILD SRCSET
+//TODO ADD APPS AND TOOLS
 
 
 
