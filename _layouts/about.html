@@ -37,8 +37,17 @@ layout: default
                 </div>
                 <div class="columns is-mobile is-multiline has-spacing-sm" id="instagram">
                 </div>
-                <h1 class="title is-1 has-spacing-sm has-padding-t-5">Little known facts</h1>
 
+                <h1 class="title is-1 has-spacing-sm has-padding-t-5">Apps and gear I use</h1>
+                <div class="columns is-mobile is-multiline">
+                    <div class="column is-12-desktop is-12-tablet is-12-mobile">
+                        {% for app in page.apps %}
+                        <p class="has-spacing-sm has-padding-b-7">{{ app }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <h1 class="title is-1 has-spacing-sm has-padding-t-5">Little known facts</h1>
                 <div class="columns is-mobile is-multiline">
 
                     <div class="column is-12-desktop is-12-tablet is-12-mobile">
