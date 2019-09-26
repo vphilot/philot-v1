@@ -11,26 +11,26 @@
     gtag('config', 'UA-109072453-1');
   </script>
   <meta charset="utf-8">
-  <title>Philot - Detecting Internet Explorer with JavaScript</title>
+  <title>Philot - We're killing the internet with network requests</title>
 
   <link rel="shortcut icon" href="assets/images/favicon.ico" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Detecting Internet Explorer is an important part of some projects, especially when implementing any kind of progressive enhancement technique. Unfortunately,...">
+  <meta name="description" content="I had the opportunity to attend an excellent talk by Kyle Simpson at this year’s Web Unleashed when he describes how it’s like to work in isolated communitie...">
 
   <meta property="og:site_name" content="">
   
-  <meta property="og:title" content="Detecting Internet Explorer with JavaScript">
+  <meta property="og:title" content="We're killing the internet with network requests">
   <meta property="og:type" content="article">
-  <meta property="og:description" content="Detecting Internet Explorer is an important part of some projects, especially when implementing any kind of progressive enhancement technique. Unfortunately, Microsoft changes the User Agent string to make it look ike something else. Here’s a quick workaround to detect IE:
+  <meta property="og:description" content="I had the opportunity to attend an excellent talk by Kyle Simpson at this year’s Web Unleashed when he describes how it’s like to work in isolated communities in rural India or Africa. My own experiences also add up to that: I was born in a very small town in rural Brazil and, to this day, visiting Granny means having to deal with a very slow 2G network that only arrived 5 years ago. Data is a commodity there and it comes with a steep price.
 
 "/>
   
   
-  <meta property="article:published_time" content="2019-05-20T00:00:00-04:00">
+  <meta property="article:published_time" content="2019-09-13T00:00:00-04:00">
   <meta property="article:author" content="http://localhost:4000/about/">
   
-  <meta property="og:url" content="http://localhost:4000/snippets/2019-05-20-js-ie-quick-detection.html" />
+  <meta property="og:url" content="http://localhost:4000/2019/09/13/killing-the-web-with-front-end.html" />
   
   <meta itemprop="keywords" content="" />
   
@@ -120,15 +120,15 @@
 </section>
   </nav>
   <main class="swup transition-fade"   style="background-color: #f4f4f4" >
-    <section class="section" id="post-detecting internet explorer with javascript">
+    <section class="section" id="post-we're killing the internet with network requests">
     <div class="container has-padding-lr-1">
         <div class="columns is-mobile is-multiline is-centered">
             <div class="column is-8-desktop is-12-mobile">
-                <h1 class="title is-1 has-spacing-sm swup-delay transition-slide">Detecting Internet Explorer with JavaScript</h1>
+                <h1 class="title is-1 has-spacing-sm swup-delay transition-slide">We're killing the internet with network requests</h1>
                 <div class="columns is-mobile is-multiline">
                     <div class="column is-5-desktop is-6-mobile has-spacing-sm">
                         <p class="has-spacing-sm is-size-6 has-border-black swup-delay transition-slide">
-                            20 May 2019
+                            13 Sep 2019
                         </p>
                     </div>
                 </div>
@@ -138,15 +138,28 @@
         <article class="swup-delay transition-fade">
             <div class="columns is-mobile is-multiline is-centered">
                 <div class="column is-8-desktop is-12-tablet is-12-mobile">
-                    <p>Detecting Internet Explorer is an important part of some projects, especially when implementing any kind of progressive enhancement technique. Unfortunately, <a href="https://blogs.msdn.microsoft.com/ieinternals/2013/09/21/internet-explorer-11s-many-user-agent-strings/">Microsoft changes the User Agent string to make it look ike something else</a>. Here’s a quick workaround to detect IE:</p>
+                    <p>I had the opportunity to attend an excellent talk by <a href="https://twitter.com/getify">Kyle Simpson</a> at this year’s Web Unleashed when he describes how it’s like to work in isolated communities in rural India or Africa. My own experiences also add up to that: I was born in a very small town in rural Brazil and, to this day, visiting Granny means having to deal with a very slow 2G network that only arrived 5 years ago. <strong>Data is a commodity</strong> there and it comes with a steep price.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">isIE</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">ua</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nb">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">;</span> <span class="c1">//Check the userAgent property of the window.navigator object</span>
-  <span class="kd">var</span> <span class="nx">msie</span> <span class="o">=</span> <span class="nx">ua</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">MSIE </span><span class="dl">'</span><span class="p">);</span> <span class="c1">// IE 10 or older</span>
-  <span class="kd">var</span> <span class="nx">trident</span> <span class="o">=</span> <span class="nx">ua</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">Trident/</span><span class="dl">'</span><span class="p">);</span> <span class="c1">//IE 11</span>
-  <span class="k">return</span> <span class="p">(</span><span class="nx">msie</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="nx">trident</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<p>Loading <a href="https://cnn.com">cnn.com</a> on your phone will set you back 2.83 MB in total data transfer (compressed). Most of it is pure JS since their image optimization pipeline seems to work very well. This is a top-notch product that is trying to do it right — can you imagine how the poorly compressed ones look like? Almost 3MB of data looks alright for us living in metropolitan areas of developed countries, but for some people with 250MB a month it can mean a big data overage bill and / or interruption in data service.</p>
+
+<p>I believe must increase our awareness over how much data we’re making our users download and how it affects not only their data bills but also how much battery they’ll be left with by the end of the day.</p>
+
+<h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="when-we-have-it-at-our-fingertips">When we have it at our fingertips</h3>
+
+<p><a href="https://developers.google.com/speed/docs/insights/MinifyResources">Minifying</a> and Gzip compression are go-to strategies to address these problems and they’ve been here for a while. On the other hand, responsive images with <code class="highlighter-rouge">&lt;picture&gt;</code> and <code class="highlighter-rouge">srcset</code> have a steep learning curve (<a href="/snippets/2019-06-05-using-picture-with-srcset.html">I have struggled myself</a>) and adoption is still fairly slow.</p>
+
+<p>Using external libraries and frameworks must be analyzed on a project-based need and not the default behaviour. When extremely necessary to do so, <a href="https://developers.google.com/speed/libraries">Google Hosted Libraries</a> is a good alternative. Use <a href="https://developers.google.com/speed/pagespeed/insights/">Google PageSpeed Insights</a> regularly and re-think your workflow if the product falls below 80 on the score — also paying special attention to the <a href="https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive">Time to Interactive metrics</a>.</p>
+
+<h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="when-third-party-are-responsible-for-content">When third party are responsible for content</h3>
+
+<p>Now and then I stumble upon Wordpress implementations serving 5mb pngs, mostly because marketers and content editors who are responsible for uploading assets don’t have any idea of what image compression means. Is it their job after all? <strong>I don’t think so.</strong></p>
+
+<p>I’ve seen even worst cases when Graphic designers send over print-ready files (in CMYK!!) for content editors to upload. And they will just upload it. What now, is it the designer’s job to deliver assets consistent with the medium? <strong>I would say a 100% yes.</strong> I lot of people still struggle to understand the fluid nature of the web and still treat is as a print medium.</p>
+
+<h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="bottom-line-we-are-everywhere-now-and-we-must-take-accountability-for-the-products-we-deliver">Bottom line: we are everywhere now, and we must take accountability for the products we deliver.</h3>
+
+<p>Either way, it’s our job to hook optimization and minification tools into the deployment pipeline. When it isn’t possible to do so, it’s fundamental to have appropriate documentation and tied up specs to try and guarantee the assets will be coherent with what the page/app needs. This whole story is less about blaming others for performance issues and more about trying to foresee better ways of ensuring these mistakes will be caught midway before when can impact the user experience.</p>
+
 
                 </div>
             </div>
@@ -156,7 +169,7 @@
                 <div class="columns is-mobile is-multiline is-centered">
                     
                         <div class="column is-4-desktop is-6-mobile">
-                            <a href="/snippets/2019-04-11-url-parameter-in-js.html">
+                            <a href="/2019/08/23/the-best-chrome-extensions-for-web-and-design.html">
                                 <h1 class="intro title is-4 has-text-weight-light has-line-spacing-tall has-text-left">
                                     Prev
                                 </h1>
@@ -171,7 +184,7 @@
                     </div>
                     
                         <div class="column is-4-desktop is-6-mobile">
-                            <a href="/snippets/2019-06-05-using-picture-with-srcset.html">
+                            <a href="/2019/09/22/adobe-xd-plugin-add-size-to-artboard-title.html">
                                 <h1 class="intro title is-4 has-text-weight-light has-line-spacing-tall has-text-right">
                                     Next
                                 </h1>
