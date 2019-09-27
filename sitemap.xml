@@ -6,6 +6,7 @@ baseurl: https://philot.space
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   {% for post in site.posts %}
     {% unless post.published == false %}
     <url>
@@ -30,6 +31,32 @@ baseurl: https://philot.space
     </url>
     {% endunless %}
   {% endfor %}
+
+    {% for work in site.works %}
+    {% unless work.published == false %}
+    <url>
+      <loc>{{ page.baseurl }}{{ work.url }}</loc>
+      {% if work.sitemap.lastmod %}
+        <lastmod>{{ work.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
+      {% elsif work.date %}
+        <lastmod>{{ work.date | date_to_xmlschema }}</lastmod>
+      {% else %}
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+      {% endif %}
+      {% if work.sitemap.changefreq %}
+        <changefreq>{{ work.sitemap.changefreq }}</changefreq>
+      {% else %}
+        <changefreq>monthly</changefreq>
+      {% endif %}
+      {% if work.sitemap.priority %}
+        <priority>{{ work.sitemap.priority }}</priority>
+      {% else %} 
+        <priority>0.7</priority>
+      {% endif %}
+    </url>
+    {% endunless %}
+  {% endfor %}
+
   {% for _page in site.pages %}
     {% unless _page.sitemap.exclude == "yes" %}
     <url>
@@ -49,7 +76,7 @@ baseurl: https://philot.space
       {% if _page.sitemap.priority %}
         <priority>{{ _page.sitemap.priority }}</priority>
       {% else %}
-        <priority>0.3</priority>
+        <priority>1.0</priority>
       {% endif %}
     </url>
     {% endunless %}
