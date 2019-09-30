@@ -1,5 +1,5 @@
 --- 
-title: Adobe XD - Add Size to Artboard Title plugin
+title: Add Size to Artboard Title Plugin for Adobe XD
 layout: post
 author: Vinicius Philot
 bgcolor: "#f4f4f4"
