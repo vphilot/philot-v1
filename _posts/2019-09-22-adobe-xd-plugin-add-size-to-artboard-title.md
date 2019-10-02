@@ -10,7 +10,7 @@ Hi there and welcome to my first Adobe XD plugin! It's a simple tool that basica
 webp = "/assets/images/post/adobe-xd-plugin-add-size-to-artboard-title.webp"
 legacy = "/assets/images/post/adobe-xd-plugin-add-size-to-artboard-title.png"
 alt = "Adobe XD - Add Size to Artboard Title plugin"
-%} 
+%}  
 
 
 [You can fork it on Github](https://github.com/vphilot/xd-add-artboard-dimensions) or hit me up on social media for suggestions. Happy artboarding!
