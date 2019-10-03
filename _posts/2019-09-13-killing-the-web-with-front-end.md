@@ -9,7 +9,7 @@ I had the opportunity to attend an excellent talk by [Kyle Simpson](https://twit
 
 Loading [cnn.com](https://cnn.com) on your phone will set you back 2.83 MB in total data transfer (compressed). Most of it is pure JS since their image optimization pipeline seems to work very well. This is a top-notch product that is trying to do it right &mdash; can you imagine how the poorly compressed ones look like? Almost 3MB of data looks alright for us living in metropolitan areas of developed countries, but for some people with 250MB a month it can mean a big data overage bill and / or interruption in data service.
 
-I believe must increase our awareness over how much data we're making our users download and how it affects not only their data bills but also how much battery they'll be left with by the end of the day.
+I believe we must increase our awareness over how much data we're making our users download and how it affects not only their data bills but also how much battery they'll be left with by the end of the day.
 
 ### When we have it at our fingertips
 {: .intro .title .is-3 .has-text-weight-normal .has-line-spacing-tall}
