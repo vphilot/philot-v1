@@ -140,9 +140,9 @@
                 <div class="column is-8-desktop is-12-tablet is-12-mobile">
                     <p><a href="https://gracious-cori-4bd380.netlify.com/"><strong>See it live</strong></a></p>
 
-<p>2019 is swamped with JavaScript frameworks and we have arrived in a moment when chosing your favourite is a matter of project based preference only. From the most mature ones, I would say I like React but I love Vue. I believe there’s a simple elegance in the way it handles data and a lot of flexibility in how it can be used, from a simple component to huge PWAs.</p>
+<p>2019 is swamped with JavaScript frameworks and we have arrived in a moment when choosing your favourite is a matter of project-based preference only. From the most mature ones, I would say I like React but I love Vue. I believe there’s a simple elegance in the way it handles data and a lot of flexibility in how it can be used, from a simple component to huge PWAs.</p>
 
-<p>I decided to take on this project as a way to explore Vue a little more in depth and also try the amazing <a href="https://pokeapi.co/">PokéAPI</a>. Before we start, <a href="https://github.com/vphilot/vue-pokemon-explorer">here’s the full source code on Github</a>.</p>
+<p>I decided to take on this project as a way to explore Vue a little more in-depth and also try the amazing <a href="https://pokeapi.co/">PokéAPI</a>. Before we start, <a href="https://github.com/vphilot/vue-pokemon-explorer">here’s the full source code on Github</a>.</p>
 
 <h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="install-vue-cli-and-clone-the-starter-project">Install Vue CLI and clone the starter project</h3>
 
@@ -159,32 +159,32 @@
 <p>After deleting most of the boilerplate structure, this is the project tree I ended up with:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├── src
-│   ├── main.js
-│   ├── components
-│   │   ├── PokemonCard.vue
-│   │   └── Main.vue
-│   ├── assets
-│   │   └── logo.png
-│   └── App.vue
+│   ├── main.js
+│   ├── components
+│   │   ├── PokemonCard.vue
+│   │   └── Main.vue
+│   ├── assets
+│   │   └── logo.png
+│   └── App.vue
 ├── public
-│   ├── index.html
-│   └── favicon.ico
+│   ├── index.html
+│   └── favicon.ico
 ├── package.json
 ├── package-lock.json
 ├── babel.config.js
 └── README.md
 </code></pre></div></div>
 
-<p>I chose to keep it simple and only have 2 main components: <code class="highlighter-rouge">Main.vue</code> and <code class="highlighter-rouge">PokemonCard.vue</code>. Even though the project is very small, I chose to stick with <a href="https://vuejs.org/v2/guide/single-file-components.html">Single File Components</a> because it’s a good way to get familiar with the framework’s best practices. This means that html, css, and (vue-specific) JS will live inside the same file, making it easier to isolate funcionality and troubleshoot bugs on a beginner level.</p>
+<p>I chose to keep it simple and only have 2 main components: <code class="highlighter-rouge">Main.vue</code> and <code class="highlighter-rouge">PokemonCard.vue</code>. Even though the project is very small, I chose to stick with <a href="https://vuejs.org/v2/guide/single-file-components.html">Single File Components</a> because it’s a good way to get familiar with the framework’s best practices. This means that HTML, CSS, and (vue-specific) JS will live inside the same file, making it easier to isolate functionality and troubleshoot bugs on a beginner level.</p>
 
 <h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="picking-a-styled-component-library">Picking a styled component library</h3>
 
-<p>Since the project is just a playground, I wasn’t too worried about creating my CSS from scratch. That’s why I chose <a href="https://buefy.org/">Buefy</a> — I love <a href="https://bulma.io/">Bulma</a> and its flexbox system for columns. Moreover, Buefy provides a large set of <a href="https://buefy.org/documentation/input">UI components</a> with great funcionality right out of the box. Just run the npm command:</p>
+<p>Since the project is just a playground, I wasn’t too worried about creating my CSS from scratch. That’s why I chose <a href="https://buefy.org/">Buefy</a> — I love <a href="https://bulma.io/">Bulma</a> and its flexbox system for columns. Moreover, Buefy provides a large set of <a href="https://buefy.org/documentation/input">UI components</a> with great functionality right out of the box. Just run the npm command:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm <span class="nb">install </span>buefy
 </code></pre></div></div>
 
-<p>After that, we have to import it in our top level <code class="highlighter-rouge">main.js</code> so it becomes available to all the Vue instances:</p>
+<p>After that, we have to import it in our top-level <code class="highlighter-rouge">main.js</code> so it becomes available to all the Vue instances:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">vue</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="nx">App</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./App.vue</span><span class="dl">"</span><span class="p">;</span>
@@ -194,7 +194,7 @@
 
 <h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="building-the-search-input-and-binding-data">Building the search input and binding data</h3>
 
-<p>For the Serch input, inside the <code class="highlighter-rouge">&lt;template&gt;</code> section of <code class="highlighter-rouge">Main.vue</code>, we can take advantage of Buefy’s custom components (hence the “b-“ before <code class="highlighter-rouge">button</code> and <code class="highlighter-rouge">input</code>) and use the <strong>Vue directive</strong> <code class="highlighter-rouge">v-model</code> to bind the whatever’s typed in the search form to a data object inside our component. This will make Vue react to changes every time a user types a character and give us methods to deal with that. <code class="highlighter-rouge">searchPokemon</code> will execute anytime the input is submitted, while <code class="highlighter-rouge">updateSuggestionsList</code> will execute immediatelym anytime the search term changes.</p>
+<p>For the Serch input, inside the <code class="highlighter-rouge">&lt;template&gt;</code> section of <code class="highlighter-rouge">Main.vue</code>, we can take advantage of Buefy’s custom components (hence the “b-“ before <code class="highlighter-rouge">button</code> and <code class="highlighter-rouge">input</code>) and use the <strong>Vue directive</strong> <code class="highlighter-rouge">v-model</code> to bind whatever’s typed in the search form to a data object inside our component. This will make Vue react to changes every time a user types a character and give us methods to deal with that. <code class="highlighter-rouge">searchPokemon</code> will execute anytime the input is submitted, while <code class="highlighter-rouge">updateSuggestionsList</code> will execute immediately anytime our user types something.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
   <span class="nt">&lt;b-input</span>
@@ -209,7 +209,7 @@
 <span class="nt">&lt;/template&gt;</span>
 </code></pre></div></div>
 
-<p>Now it’s time to bind these values to the data in out <code class="highlighter-rouge">Main.vue</code> in the <code class="highlighter-rouge">&lt;script&gt;</code> section. We’ll also build the structure of our <code class="highlighter-rouge">result</code> object inside the component — we’ll use this to store all the information we’ll get back from the API and pass it onto our other component, <code class="highlighter-rouge">PokemonCard.vue</code>, which will react to changes and re-render whenever we get a new result. Interesting to notice that, even though we’re not using TypeScript here, Vue requires us to specify what kind of data do expect from each property.</p>
+<p>Now it’s time to bind these values to the data in our <code class="highlighter-rouge">Main.vue</code> in the <code class="highlighter-rouge">&lt;script&gt;</code> section. We’ll also build the structure of our <code class="highlighter-rouge">result</code> object inside the component — we’ll use this to store all the information we’ll get back from the API and pass it onto our other component, <code class="highlighter-rouge">PokemonCard.vue</code>, which will react to changes and re-render whenever we get a new result. Interesting to notice that, even though we’re not using TypeScript here, Vue requires us to specify what kind of data do expect from each property.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
   <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Main</span><span class="dl">"</span><span class="p">,</span>
@@ -241,7 +241,7 @@
 
 <h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="how-to-handle-api-requests-in-vue">How to handle API Requests in Vue</h3>
 
-<p>Using Vue means taking advantage of <em>Fetch</em> to make http calls way more simple than dealing with the old XMLHttpRequest request model. Our starter project already contains a transpiling utility to ES5 with Babel, so compatibility is not a huge concern here. Fetch will return a simple Promise that will make populating data from APIs a breeze based on whether the call is sucessful of note. Here’s the basic syntax on how to use it:</p>
+<p>Using Vue means taking advantage of <em>Fetch</em> to make HTTP calls way more simple than dealing with the old XMLHttpRequest request model. Our starter project already contains a transpiling utility to ES5 with Babel, so compatibility is not a huge concern here. Fetch will return a simple Promise that will make populating data from APIs a breeze based on whether the call is successful of note. Here’s the basic syntax on how to use it:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">fetch</span><span class="p">(</span><span class="s2">`https://someapi.com?params`</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
