@@ -1,0 +1,394 @@
+<!doctype html>
+<html>
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109072453-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-109072453-1');
+  </script>
+  <meta charset="utf-8">
+  <title>Philot - Building an Ancestry chart with Vue and Chat.js</title>
+
+  <link rel="shortcut icon" href="assets/images/favicon.ico" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="See it live">
+
+  <meta property="og:site_name" content="">
+  
+  <meta property="og:title" content="Building an Ancestry chart with Vue and Chat.js">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="See it live
+
+"/>
+  
+  
+  <meta property="article:published_time" content="2019-12-18T00:00:00-05:00">
+  <meta property="article:author" content="http://localhost:4000/about/">
+  
+  <meta property="og:url" content="http://localhost:4000/2019/12/18/anchestry-chart-vue-chartjs.html" />
+  
+  <meta itemprop="keywords" content="" />
+  
+  
+   
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script src="/assets/js/swup.js"></script>
+  <script src="/assets/js/app.js"></script>
+</head>
+
+<body>
+  <nav class="swup">
+    <div class="navigation__toggle is-hidden-desktop"></div>
+<nav class="level" id="navigation">
+  <div class="container has-padding-lr-1">
+    <div class="level-left">
+    </div>
+    <div class="level-right is-uppercase">
+      
+      <div class="column is-1-desktop is-size-7 has-spacing-lg has-text-right">
+        <a href="/" >
+          Home
+        </a>
+      </div>
+      
+      <div class="column is-1-desktop is-size-7 has-spacing-lg has-text-right">
+        <a href="/about.html" >
+          About
+        </a>
+      </div>
+      
+      <div class="column is-1-desktop is-size-7 has-spacing-lg has-text-right">
+        <a href="/blog.html" >
+          Blog
+        </a>
+      </div>
+      
+      <div class="column is-1-desktop is-size-7 has-spacing-lg has-text-right">
+        <a href="/works.html" >
+          Work
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</nav>
+    <section class="section" id="header">
+    <div class="container has-padding-lr-1">
+
+        <div class="columns is-mobile is-multiline is-vbaseline">
+            <div class="column is-4-desktop is-8-mobile">
+                <h1 class="title is-1"><a href="/">Vinícius Philot</a></h1>
+            </div>
+            <div class="column is-3-desktop is-8-mobile">
+                <p class="has-spacing-sm is-size-7">Front End Designer and Developer</p>
+            </div>
+            <div class="column is-3-desktop is-6-mobile has-spacing-sm">
+                <a href="mailto:hello@philot.space?subject=Hey%2C%20nice%20web%20page%20you%20have">
+                    <p class="has-spacing-sm is-size-7">hello@philot.space</p>
+                </a>
+                </div>
+            <div class="column is-2-desktop is-12-mobile">
+                <a href="https://www.linkedin.com/in/vphilot/?locale=en_US" target="_blank">
+                    <i class="icon icon-linkedin">&#xf0e1;</i>
+                </a>
+                <a href="https://dribbble.com/vphilot" target="_blank">
+                    <i class="icon icon-dribbble">&#xf17d;</i>
+                </a>
+                <a href="https://twitter.com/vphilot" target="_blank">
+                    <i class="icon icon-twitter">&#xf099;</i>
+                </a>
+                <a href="https://instagram.com/vphilot" target="_blank">
+                    <i class="icon icon-instagram">&#xf16d;</i>
+                </a>
+                <a href="https://github.com/vphilot" target="_blank">
+                    <i class="icon icon-github">&#xf113;</i>
+                </a>
+                <a href="https://codepen.io/vphilot/" target="_blank">
+                    <i class="icon icon-codepen">&#xf32c;</i>
+                </a>
+                <a href="https://open.spotify.com/user/12183629233" target="_blank">
+                    <i class="icon icon-spotify">&#xf1bc;</i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+  </nav>
+  <main class="swup transition-fade"   style="background-color: #f4f4f4" >
+    <section class="section" id="post-building an ancestry chart with vue and chat.js">
+    <div class="container has-padding-lr-1">
+        <div class="columns is-mobile is-multiline is-centered">
+            <div class="column is-8-desktop is-12-mobile">
+                <h1 class="title is-1 has-spacing-sm swup-delay transition-slide">Building an Ancestry chart with Vue and Chat.js</h1>
+                <div class="columns is-mobile is-multiline">
+                    <div class="column is-5-desktop is-6-mobile has-spacing-sm">
+                        <p class="has-spacing-sm is-size-6 has-border-black swup-delay transition-slide">
+                            18 Dec 2019
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <article class="swup-delay transition-fade">
+            <div class="columns is-mobile is-multiline is-centered">
+                <div class="column is-8-desktop is-12-tablet is-12-mobile">
+                    <p><a href="https://hardcore-shaw-54dbef.netlify.com"><strong>See it live</strong></a></p>
+
+<p>After scoring a nice deal on 23andme and going through the useless (but utterly entertaining) journey of finding out more about my origins, I couldn’t wait to replicate the nice pie graphs 23andme shows on their (very nice) web app.</p>
+
+<p>I knew I wanted to use Vue to speed up my development process, but I had no idea on which chart library I should use, having very little experience with this before. I decided to go with <a href="https://www.chartjs.org/"><strong>Chart.js</strong></a> and found <a href="https://vue-chartjs.org/"><strong>vue-chartjs</strong></a> as ready-to-use solution with Vue.</p>
+
+<h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="setting-up-the-project">Setting up the project</h3>
+
+<p>Using Vue-CLI, I started off with a templated starter project:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vue create vue-ancestry-chart
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm <span class="nb">install </span>vue-chartjs chart.js <span class="nt">--save</span>
+</code></pre></div></div>
+
+<p>I needed one simple component to make it work: <code class="highlighter-rouge">AncestryChart.vue</code>, which made the final folder structure pretty simple:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├── src
+│   ├── main.js
+│   ├── components
+│   │   └── AncestryChart.vue
+│   ├── assets
+│   │   └── logo.png
+│   └── App.vue
+├── public
+│   ├── index.html
+│   ├── favicon.ico
+│   └── ancestry_composition.csv
+├── package.json
+├── babel.config.js
+└── README.md
+</code></pre></div></div>
+<h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="creating-the-chart-component">Creating the Chart component</h3>
+
+<p>Inside <code class="highlighter-rouge">App.vue</code>, we need to import our <code class="highlighter-rouge">AncestryChart.vue</code> component and register it for future use:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">AncestryChart</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./components/AncestryChart.vue</span><span class="dl">'</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">app</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">components</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nx">AncestryChart</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>And now inside <code class="highlighter-rouge">AncestryChart.vue</code> we need to setup <code class="highlighter-rouge">vue-chartjs</code> properly. I chose the Doughnut chart and imported the mixins so we can bind data accurately.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Doughnut</span><span class="p">,</span> <span class="nx">mixins</span> <span class="p">}</span>  <span class="k">from</span> <span class="dl">'</span><span class="s1">vue-chartjs</span><span class="dl">'</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">AncestryChart</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">extends</span><span class="p">:</span> <span class="nx">Doughnut</span><span class="p">,</span>
+  <span class="na">mixins</span><span class="p">:</span> <span class="p">[</span><span class="nx">mixins</span><span class="p">.</span><span class="nx">reactiveProp</span><span class="p">],</span>
+
+<span class="na">props</span><span class="p">:</span> <span class="p">{</span>
+  <span class="na">chartData</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="na">options</span><span class="p">:</span> <span class="p">{}</span>
+<span class="p">},</span>
+
+  <span class="nx">mounted</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">renderChart</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">chartData</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>As you can see above, we need two main props to make our chart render: <code class="highlighter-rouge">chartData</code> and <code class="highlighter-rouge">options</code>. Both of them will be sent to this component by our main <code class="highlighter-rouge">App.vue</code>. I will not go through the options object since it’s just a simple set of extensive configuration options, but the next sections will explain how to set up our chart data properly.</p>
+
+<h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="data-structure">Data structure</h3>
+
+<p>Downloading raw data from 23andme can be done in two ways: the whole full DNA set grouped my chromossome (which would be hard to make sense of since I’m not a Genetic Engineer) or a simple outline of ancestry ocurrences. Needless to say, I went for the second option:</p>
+
+<p>The CSV file looked like this:</p>
+
+<table class="table is-bordered is-fullwidth">
+  <thead>
+    <tr>
+      <th>Ancestry</th>
+      <th>Copy</th>
+      <th>Chromossome</th>
+      <th>Start</th>
+      <th>End</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Broadly Northwestern European</td>
+      <td>1</td>
+      <td>chr4</td>
+      <td>79843697</td>
+      <td>89063363</td>
+    </tr>
+    <tr>
+      <td>Broadly Sub-Saharan African</td>
+      <td>1</td>
+      <td>chr1</td>
+      <td>24549064</td>
+      <td>249222527</td>
+    </tr>
+    <tr>
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Something I had quite never done before though was parsing CSV data in JavaScript. I found a very useful library for this -  <a href="d3-fetch">https://github.com/d3/d3-fetch</a> - which I’ll explain how to implement it below.</p>
+
+<h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="using-d3-fetch-to-parse-csv-data">Using d3-fetch to parse CSV data</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm <span class="nb">install </span>d3-fetch <span class="nt">--save</span>
+</code></pre></div></div>
+
+<p>After installing <code class="highlighter-rouge">d3-fetch</code>, we need to make it available inside <code class="highlighter-rouge">App.vue</code>. Using external libraries inside Vue components can be done with the following import statement:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">d3</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../node_modules/d3-fetch/dist/d3-fetch</span><span class="dl">'</span>
+</code></pre></div></div>
+
+<p>The computed data we’ll extract from the CSV file needs somewhere to live inside the main App component, and we’ll use the <code class="highlighter-rouge">data</code> object for that””</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">dataset</span><span class="p">:</span> <span class="p">{},</span>
+      <span class="na">options</span><span class="p">:</span> <span class="p">{</span>
+        <span class="c1">//options here</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+ <span class="p">}</span>
+</code></pre></div></div>
+<p>We’ll now start parsing the CSV data by creating a new function inside <code class="highlighter-rouge">methods</code>:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">methods</span><span class="p">:</span> <span class="p">{</span>
+    
+    <span class="c1">//use d3-fetch to read the CSV file and output it in readable data</span>
+    <span class="nx">readCSV</span><span class="p">(</span><span class="nx">csvFile</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">d3</span><span class="p">.</span><span class="nx">csv</span><span class="p">(</span><span class="nx">csvFile</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span> <span class="nx">data</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">parseData</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">);</span>
+    <span class="p">},</span>
+    
+    <span class="c1">//parse raw csv data and get ancestry count</span>
+    <span class="nx">parseData</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">//creating a temporary object to get the ancestry regions count</span>
+      <span class="kd">let</span> <span class="nx">composition</span> <span class="o">=</span> <span class="p">{};</span>
+      <span class="c1">//mapping the outcome of d3-fech to the temporary object</span>
+      <span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span> <span class="nx">item</span>  <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">composition</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">Ancestry</span><span class="p">))</span> 
+        <span class="p">{</span>
+          <span class="nx">composition</span><span class="p">[</span><span class="nx">item</span><span class="p">.</span><span class="nx">Ancestry</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="nx">composition</span><span class="p">[</span><span class="nx">item</span><span class="p">.</span><span class="nx">Ancestry</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">});</span>
+
+      <span class="c1">//this is the boilerplate structure for the data vue-chartjs needs</span>
+      <span class="kd">let</span> <span class="nx">d</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">labels</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="na">datasets</span><span class="p">:</span> <span class="p">[{</span>
+          <span class="na">label</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Ancestry:</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">data</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="na">backgroundColor</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="na">borderColor</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="na">borderAlign</span><span class="p">:</span> <span class="dl">'</span><span class="s1">inner</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">borderWidth</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+        <span class="p">}]</span>
+      <span class="p">};</span>
+
+      <span class="c1">//calculating totals to transform absolute count numbers into percentages</span>
+      <span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">composition</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">total</span> <span class="o">+=</span> <span class="nx">composition</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
+      <span class="p">}</span>
+
+      <span class="c1">//since the CSV files outputs results alphabetically, we need to sort them by count number</span>
+      <span class="kd">let</span> <span class="nx">compositionSorted</span> <span class="o">=</span> <span class="p">[];</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">composition</span><span class="p">){</span>
+        <span class="nx">compositionSorted</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="na">ancestry</span><span class="p">:</span> <span class="nx">key</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="nx">composition</span><span class="p">[</span><span class="nx">key</span><span class="p">]})</span>
+      <span class="p">}</span>
+      <span class="nx">compositionSorted</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span> 
+        <span class="k">return</span> <span class="nx">a</span><span class="p">.</span><span class="nx">count</span> <span class="o">-+</span><span class="nx">b</span><span class="p">.</span><span class="nx">count</span><span class="p">;</span>
+      <span class="p">})</span>
+      <span class="nx">compositionSorted</span><span class="p">.</span><span class="nx">reverse</span><span class="p">();</span>
+
+      <span class="c1">//finally, mapping our sorted array into the final structured data </span>
+      <span class="nx">compositionSorted</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">d</span><span class="p">.</span><span class="nx">labels</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">ancestry</span><span class="p">);</span>
+        <span class="nx">d</span><span class="p">.</span><span class="nx">datasets</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">data</span><span class="p">.</span><span class="nx">push</span><span class="p">((</span><span class="nx">item</span><span class="p">.</span><span class="nx">count</span><span class="o">/</span><span class="nx">total</span><span class="o">*</span><span class="mi">100</span><span class="p">).</span><span class="nx">toFixed</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span>
+     <span class="p">})</span>
+
+     <span class="c1">//binding the reactive data object to this final result </span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">dataset</span> <span class="o">=</span> <span class="nx">d</span><span class="p">;</span>
+    <span class="p">},</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<p>A quick overview of what’s happening above: there’s a short function named <code class="highlighter-rouge">readCSV()</code> that takes a CSV file as an argument and uses d3-fetch to read the it and output an array of objects. <code class="highlighter-rouge">readCSV</code> will then call <code class="highlighter-rouge">parseData()</code>, passing the outcome as an argument. From there on we’ll do all the data handling necessary to find unique instances of ancestry regions and sort them by ocurrence count.</p>
+
+<p>Everything left to do now is only implement the <code class="highlighter-rouge">AncestryChart.vue</code> component inside <code class="highlighter-rouge">App.vue</code> and bind the dataset:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;AncestryChart</span> <span class="na">:chartData=</span><span class="s">"this.dataset"</span> <span class="na">:options=</span><span class="s">"this.options"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="learnings">Learnings</h3>
+
+<p>This simple project was fun to build and interesting in terms of learning outcomes. I discovered I still need to explore more data structures (a simple CSV was quite a hassle to parse!) and explore other chart libraries. Chart.js is pretty comprehensive and has a ton of customization options, however it’s hard to fine tune its styling and responsiveness since it’s rendered inside a <code class="highlighter-rouge">&lt;canvas&gt;</code> element. <a href="https://gracious-cori-4bd380.netlify.com/">You can see the project live here.</a>.</p>
+
+
+                </div>
+            </div>
+        </article>
+        <div class="columns is-mobile is-multiline is-centered">
+            <div class="column is-8-desktop is-12-mobile">
+                <div class="columns is-mobile is-multiline is-centered">
+                    
+                        <div class="column is-4-desktop is-6-mobile">
+                            <a href="/2019/10/05/pokemon-explorer-vue-pokeapi.html">
+                                <h1 class="intro title is-4 has-text-weight-light has-line-spacing-tall has-text-left">
+                                    Prev
+                                </h1>
+                                <svg x="0px" y="0px" viewBox="0 0 200 10">
+                                    <polyline points="6,0 1,5 6,10 " />
+                                    <line x1="1" y1="5" x2="200" y2="5" />
+                                </svg>
+                            </a>
+                        </div>
+                    
+                    <div class="column is-4-desktop is-hidden-mobile">
+                    </div>
+                    
+                        <div class="column is-4-desktop is-hidden-mobile">
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+    <section id="footer" class="container has-padding-1">
+    <div class="columns is-multiline is-centered">
+        <div class="column is-12">
+            <p class="is-size-7 has-text-grey has-spacing-sm">This website was developed with <i class="icon icon-heart-empty">&#xe800;</i> and <a
+                    href="https://github.com" target="_blank" id="footerDisplay">github</a> </p>
+        </div>
+    </div>
+</div>
+  </main>
+
+
+</body>
+
+
+</html>
