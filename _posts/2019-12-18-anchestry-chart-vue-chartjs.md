@@ -1,5 +1,5 @@
 ---
-title: Building an Ancestry chart with Vue and Chat.js
+title: Building an Ancestry chart with Vue and Chart.js
 layout: post
 author: Vinicius Philot
 bgcolor: "#f4f4f4"
