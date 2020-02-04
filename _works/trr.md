@@ -5,7 +5,7 @@ category: web development
 tools: Adobe XD, HTML5, Sass, JavaScript
 libraries: Bulma, AOS, Rellax 
 bgcolor: '#FCEFB7'
-external: https://www.therecroom.com/default/promo/nowhiring-squareone
+external: https://gracious-golick-9cc5e7.netlify.com/
 featureimg: ../assets/images/work/trr-feature.png
 order: 3
 ---
