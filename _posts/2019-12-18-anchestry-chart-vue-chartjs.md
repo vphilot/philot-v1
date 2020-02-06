@@ -5,9 +5,10 @@ author: Vinicius Philot
 bgcolor: "#f4f4f4"
 ---
 
-[**See it live**](https://hardcore-shaw-54dbef.netlify.com)
 
 After scoring a nice deal on 23andme and going through the useless (but utterly entertaining) journey of finding out more about my origins, I couldn't wait to replicate the nice pie graphs 23andme shows on their (very nice) web app. 
+
+[**See it live**](https://hardcore-shaw-54dbef.netlify.com){:target="_blank"}
 
 I knew I wanted to use Vue to speed up my development process, but I had no idea on which chart library I should use, having very little experience with this before. I decided to go with [**Chart.js**](https://www.chartjs.org/) and found [**vue-chartjs**](https://vue-chartjs.org/) as ready-to-use solution with Vue.
 

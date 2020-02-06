@@ -5,18 +5,18 @@ author: Vinicius Philot
 bgcolor: "#f4f4f4"
 ---
 
-I had the opportunity to attend an excellent talk by [Kyle Simpson](https://twitter.com/getify) at this year's Web Unleashed when he describes how it's like to work in isolated communities in rural India or Africa. My own experiences also add up to that: I was born in a very small town in rural Brazil and, to this day, visiting Granny means having to deal with a very slow 2G network that only arrived 5 years ago. **Data is a commodity** there and it comes with a steep price. 
+I had the opportunity to attend an excellent talk by [Kyle Simpson](https://twitter.com/getify){:target="_blank"} at this year's Web Unleashed when he describes how it's like to work in isolated communities in rural India or Africa. My own experiences also add up to that: I was born in a very small town in rural Brazil and, to this day, visiting Granny means having to deal with a very slow 2G network that only arrived 5 years ago. **Data is a commodity** there and it comes with a steep price. 
 
-Loading [cnn.com](https://cnn.com) on your phone will set you back 2.83 MB in total data transfer (compressed). Most of it is pure JS since their image optimization pipeline seems to work very well. This is a top-notch product that is trying to do it right &mdash; can you imagine how the poorly compressed ones look like? Almost 3MB of data looks alright for us living in metropolitan areas of developed countries, but for some people with 250MB a month it can mean a big data overage bill and / or interruption in data service.
+Loading [cnn.com](https://cnn.com){:target="_blank"} on your phone will set you back 2.83 MB in total data transfer (compressed). Most of it is pure JS since their image optimization pipeline seems to work very well. This is a top-notch product that is trying to do it right &mdash; can you imagine how the poorly compressed ones look like? Almost 3MB of data looks alright for us living in metropolitan areas of developed countries, but for some people with 250MB a month it can mean a big data overage bill and / or interruption in data service.
 
 I believe we must increase our awareness over how much data we're making our users download and how it affects not only their data bills but also how much battery they'll be left with by the end of the day.
 
 ### When we have it at our fingertips
 {: .intro .title .is-3 .has-text-weight-normal .has-line-spacing-tall}
 
-[Minifying](https://developers.google.com/speed/docs/insights/MinifyResources) and Gzip compression are go-to strategies to address these problems and they've been here for a while. On the other hand, responsive images with `<picture>` and `srcset` have a steep learning curve ([I have struggled myself](/snippets/2019-06-05-using-picture-with-srcset.html)) and adoption is still fairly slow.
+[Minifying](https://developers.google.com/speed/docs/insights/MinifyResources){:target="_blank"} and Gzip compression are go-to strategies to address these problems and they've been here for a while. On the other hand, responsive images with `<picture>` and `srcset` have a steep learning curve ([I have struggled myself](/snippets/2019-06-05-using-picture-with-srcset.html){:target="_blank"}) and adoption is still fairly slow.
 
-Using external libraries and frameworks must be analyzed on a project-based need and not the default behaviour. When extremely necessary to do so, [Google Hosted Libraries](https://developers.google.com/speed/libraries) is a good alternative. Use [Google PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) regularly and re-think your workflow if the product falls below 80 on the score &mdash; also paying special attention to the [Time to Interactive metrics](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive).
+Using external libraries and frameworks must be analyzed on a project-based need and not the default behaviour. When extremely necessary to do so, [Google Hosted Libraries](https://developers.google.com/speed/libraries){:target="_blank"} is a good alternative. Use [Google PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/){:target="_blank"} regularly and re-think your workflow if the product falls below 80 on the score &mdash; also paying special attention to the [Time to Interactive metrics](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive){:target="_blank"}.
 
 ### When third party are responsible for content
 {: .intro .title .is-3 .has-text-weight-normal .has-line-spacing-tall}

@@ -7,9 +7,9 @@ bgcolor: "#f4f4f4"
 
 Maintaining and updating web projects developed by other people has its specificities. Sometimes you're working on a page or application that has been maintained by several different people over the years and you realize stylesheets can become *messy*, to say the least. 
 w
-There are great tools out there such as [PurgeCSS](https://www.purgecss.com/) that will automate this process for us, but when development is made on a CMS and/or you don't have the time to set up a local developing environment, Chrome Dev Tools is a great alternative.
+There are great tools out there such as [PurgeCSS](https://www.purgecss.com/){:target="_blank"} that will automate this process for us, but when development is made on a CMS and/or you don't have the time to set up a local developing environment, Chrome Dev Tools is a great alternative.
 
-Let's try the process with [cbc.ca](https://www.cbc.ca/) just for education purposes. The first step is bringing up the Chrome Dev Tools panel with <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd> (Windows) <kbd>Command</kbd>+<kbd>Option</kbd>+<kbd>I</kbd> (Mac). Click on the **Sources** tab and then open the **Command Menu** wih <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> (Windows) <kbd>Command</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> (Mac), type in and select *Show Coverage*.
+Let's try the process with [cbc.ca](https://www.cbc.ca/){:target="_blank"} just for education purposes. The first step is bringing up the Chrome Dev Tools panel with <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd> (Windows) <kbd>Command</kbd>+<kbd>Option</kbd>+<kbd>I</kbd> (Mac). Click on the **Sources** tab and then open the **Command Menu** wih <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> (Windows) <kbd>Command</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> (Mac), type in and select *Show Coverage*.
 
 One in the **Coverage Tab** it's a very simple process: click on the *reload* button to reload the page and start capturing coverage. The page will reload and the panel will populate with many (sometimes too many) sources. When you click once on an element, its source code will pop up as a tab right above the Coverage tab:
 

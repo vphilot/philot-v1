@@ -31,7 +31,7 @@ Most Wordpress installations come with a **one-size-fits-all** approach. It mean
 {: .intro .title .is-3 .has-text-weight-normal .has-line-spacing-tall}
 
 
-If you’ve ever hosted a Wordpress installation, you probably know that security updates are vital to keeping your website running. There’s a reason for that: Wordpress (and most legacy CMS) databases [are prone to hacking](https://www.wpwhitesecurity.com/statistics-70-percent-wordpress-installations-vulnerable/).   
+If you’ve ever hosted a Wordpress installation, you probably know that security updates are vital to keeping your website running. There’s a reason for that: Wordpress (and most legacy CMS) databases [are prone to hacking](https://www.wpwhitesecurity.com/statistics-70-percent-wordpress-installations-vulnerable/){:target="_blank"}.   
 
 This is not an issue if you have a simple online portfolio with a small to medium audience &mdash; just set a good backup plugin (*another plugin??* ) and you’re good to go. The problem is, again, **understanding the scale**: the impact of a database injection/hack on an e-commerce website can be huge. Good luck explaining to your client that this was not your fault.
 
@@ -49,4 +49,4 @@ Compare this with installing some node modules with hot reload, building static 
 
 Wordpress is trusted by millions of consumers worldwide, and it has a fundamental role in making the web open to more people. It’s not a *bad* platform by any means, but it’s not a standard boilerplate for every single project either. How badly does your client need a robust database solution? How often will the content be updated? How does it *scale* over time? 
 
-The good thing about the current state of the web is that solutions come and go every day. Implementing content that is served dynamically and depends on constant queries is not the only option anymore. There are many static site generators out there that can provide a friendly user interface for clients. [Jekyll](https://jekyllrb.com/) (my personal favourite) and [Hugo](https://gohugo.io/) are good examples. Learning how to understand what each project needs and planning for maximum performance is the best way to avoid unecessary headaches in the long term and making clients happy. Don't you love happy clients? I do.
+The good thing about the current state of the web is that solutions come and go every day. Implementing content that is served dynamically and depends on constant queries is not the only option anymore. There are many static site generators out there that can provide a friendly user interface for clients. [Jekyll](https://jekyllrb.com/){:target="_blank"} (my personal favourite) and [Hugo](https://gohugo.io/){:target="_blank"} are good examples. Learning how to understand what each project needs and planning for maximum performance is the best way to avoid unecessary headaches in the long term and making clients happy. Don't you love happy clients? I do.

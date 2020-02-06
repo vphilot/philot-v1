@@ -5,9 +5,10 @@ author: Vinicius Philot
 bgcolor: "#f4f4f4"
 ---
 
-[**See it live**](https://gracious-cori-4bd380.netlify.com/)
 
 2019 is swamped with JavaScript frameworks and we have arrived in a moment when choosing your favourite is a matter of project-based preference only. From the most mature ones, I would say I like React but I love Vue. I believe there's a simple elegance in the way it handles data and a lot of flexibility in how it can be used, from a simple component to huge PWAs.
+
+[**See it live**](https://gracious-cori-4bd380.netlify.com/){:target="_blank"}
 
 I decided to take on this project as a way to explore Vue a little more in-depth and also try the amazing [PokéAPI](https://pokeapi.co/). Before we start, [here's the full source code on Github](https://github.com/vphilot/vue-pokemon-explorer).
 

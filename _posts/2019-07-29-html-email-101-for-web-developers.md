@@ -61,7 +61,7 @@ Long story short: make sure every image has a meaningful alternative text in it!
 ### Inline is king here
 {: .intro .title .is-3 .has-text-weight-normal .has-line-spacing-tall}
 
-Inline styles are not the best practice when it comes to web pages and apps, but they're an essential part of making HTML emails come to life since several email clients will strip your `<style> ` tags and ignore any CSS imported with  `<link>`. I prefer to do most of the process manually, because 1) I'm used to it already and 2) it gives me more granular control over what's happening. But [Mailchimp has a great inliner tool](https://templates.mailchimp.com/resources/inline-css/) that will make your life way easier if you're just starting.
+Inline styles are not the best practice when it comes to web pages and apps, but they're an essential part of making HTML emails come to life since several email clients will strip your `<style> ` tags and ignore any CSS imported with  `<link>`. I prefer to do most of the process manually, because 1) I'm used to it already and 2) it gives me more granular control over what's happening. But [Mailchimp has a great inliner tool](https://templates.mailchimp.com/resources/inline-css/){:target="_blank"} that will make your life way easier if you're just starting.
 
 ### Example: coding a responsive CTA button
 {: .intro .title .is-3 .has-text-weight-normal .has-line-spacing-tall}
@@ -91,8 +91,8 @@ Considering a 600px wide email, there is one table row on each side of the main 
 
 Take a closer look at some marketing campaigns on your inbox. I'm sure you'll find that many of them render the same on desktop and mobile. That's because **building a good responsive email is hard**, and some businesses can't afford the slow turnaround for developing and testing a fully customized solution. Here are some resources to get you started:
 
-* [Lee Munroe's starting template (nice reference for studying)](https://github.com/leemunroe/responsive-html-email-template)
+* [Lee Munroe's starting template (nice reference for studying)](https://github.com/leemunroe/responsive-html-email-template){:target="_blank"}
 
-* [An Introduction To Building And Sending HTML Email For Web Developers](https://www.smashingmagazine.com/2017/01/introduction-building-sending-html-email-for-web-developers/)
+* [An Introduction To Building And Sending HTML Email For Web Developers](https://www.smashingmagazine.com/2017/01/introduction-building-sending-html-email-for-web-developers/){:target="_blank"}
 
-* [The Ultimate Guide to Web Fonts](https://litmus.com/blog/the-ultimate-guide-to-web-fonts)
+* [The Ultimate Guide to Web Fonts](https://litmus.com/blog/the-ultimate-guide-to-web-fonts){:target="_blank"}
