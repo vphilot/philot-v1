@@ -9616,15 +9616,9 @@ line, polyline {
   line-height: 1.75rem; }
 [id^="post"] h3 {
   position: relative; }
-[id^="post"] h3::before {
-  content: '';
-  position: absolute;
-  width: 5%;
-  height: 100%;
-  border-top: 1px solid black;
-  top: 0;
-  left: 0;
-  transform: translate(-110%, 1rem); }
+[id^="post"] ul.has-bullet {
+  list-style-type: circle;
+  margin-bottom: 1rem; }
 
 @media screen and (max-width: 768px) {
   [id^="post"] p {
