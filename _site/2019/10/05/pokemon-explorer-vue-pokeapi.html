@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -13,7 +13,7 @@
   <meta charset="utf-8">
   <title>Philot - Building a Pokémon Explorer with Vue and PokéAPI</title>
 
-  <link rel="shortcut icon" href="assets/images/favicon.ico" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="2019 is swamped with JavaScript frameworks and we have arrived in a moment when choosing your favourite is a matter of project-based preference only. From th...">
@@ -93,26 +93,61 @@
                 </a>
                 </div>
             <div class="column is-2-desktop is-12-mobile">
-                <a href="https://www.linkedin.com/in/vphilot/?locale=en_US" target="_blank">
-                    <i class="icon icon-linkedin">&#xf0e1;</i>
+                <a 
+                aria-label="check my Linkedin in a new tab" 
+                href="https://www.linkedin.com/in/vphilot/?locale=en_US" 
+                target="_blank"
+                tabindex="0"
+                >
+                    <i aria-hidden="true" class="icon icon-linkedin">&#xf0e1;</i>
                 </a>
-                <a href="https://dribbble.com/vphilot" target="_blank">
-                    <i class="icon icon-dribbble">&#xf17d;</i>
+                <a
+                aria-label="check my Driblle in a new tab" 
+                href="https://dribbble.com/vphilot" 
+                target="_blank"
+                tabindex="0"
+                >
+                    <i aria-hidden="true" class="icon icon-dribbble">&#xf17d;</i>
                 </a>
-                <a href="https://twitter.com/vphilot" target="_blank">
-                    <i class="icon icon-twitter">&#xf099;</i>
+                <a 
+                aria-label="check my Twitter in a new tab" 
+                href="https://twitter.com/vphilot" 
+                target="_blank"
+                tabindex="0"
+                >
+                    <i aria-hidden="true" class="icon icon-twitter">&#xf099;</i>
                 </a>
-                <a href="https://instagram.com/vphilot" target="_blank">
-                    <i class="icon icon-instagram">&#xf16d;</i>
+                <a 
+                aria-label="check my Instagram in a new tab"
+                href="https://instagram.com/vphilot" 
+                target="_blank"
+                tabindex="0"
+                >
+                    <i aria-hidden="true" class="icon icon-instagram">&#xf16d;</i>
                 </a>
-                <a href="https://github.com/vphilot" target="_blank">
-                    <i class="icon icon-github">&#xf113;</i>
+                <a 
+                aria-label="check my Github in a new tab" 
+                href="https://github.com/vphilot" 
+                target="_blank"
+                tabindex="0"
+                >
+                    <i aria-hidden="true" class="icon icon-github">&#xf113;</i>
                 </a>
-                <a href="https://codepen.io/vphilot/" target="_blank">
-                    <i class="icon icon-codepen">&#xf32c;</i>
+                <a 
+                aria-label="check my Codepen in a new tab" 
+                href="https://codepen.io/vphilot/" 
+                target="_blank"
+                tabindex="0"
+                >
+                    <i aria-hidden="true" class="icon icon-codepen">&#xf32c;</i>
                 </a>
-                <a href="https://open.spotify.com/user/12183629233" target="_blank">
-                    <i class="icon icon-spotify">&#xf1bc;</i>
+                <a 
+                aria-label="check my Spotify in a new tab" 
+                href="https://open.spotify.com/user/12183629233" 
+                target="_blank"
+                tabindex="0"
+                >
+                    <i aria-hidden="true" class="icon icon-spotify">&#xf1bc;</i>
                 </a>
             </div>
         </div>
@@ -241,7 +276,7 @@
 
 <h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="how-to-handle-api-requests-in-vue">How to handle API Requests in Vue</h3>
 
-<p>Using Vue means taking advantage of <em>Fetch</em> to make HTTP calls way more simple than dealing with the old XMLHttpRequest request model. Our starter project already contains a transpiling utility to ES5 with Babel, so compatibility is not a huge concern here. Fetch will return a simple Promise that will make populating data from APIs a breeze based on whether the call is successful of note. Here’s the basic syntax on how to use it:</p>
+<p>Using Vue means taking advantage of <em>Fetch</em> to make HTTP calls way more simple than dealing with the old XMLHttpRequest request model. Our starter project already contains a transpiling utility to ES5 with Babel, so compatibility is not a huge concern here. Fetch will return a simple Promise that will make populating data from APIs a breeze based on whether the call is successful or not. Here’s the basic syntax on how to use it:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">fetch</span><span class="p">(</span><span class="s2">`https://someapi.com?params`</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -359,7 +394,7 @@
     <section id="footer" class="container has-padding-1">
     <div class="columns is-multiline is-centered">
         <div class="column is-12">
-            <p class="is-size-7 has-text-grey has-spacing-sm">This website was developed with <i class="icon icon-heart-empty">&#xe800;</i> and <a
+            <p class="is-size-7 has-text-grey has-spacing-sm">This website was developed with <i class="icon icon-heart-empty" aria-hidden="true">&#xe800;</i> and <a
                     href="https://github.com" target="_blank" id="footerDisplay">github</a> </p>
         </div>
     </div>

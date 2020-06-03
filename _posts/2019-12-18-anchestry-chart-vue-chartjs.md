@@ -90,13 +90,42 @@ As you can see above, we need two main props to make our chart render: `chartDat
 Downloading raw data from 23andme can be done in two ways: the whole full DNA set grouped my chromossome (which would be hard to make sense of since I'm not a Genetic Engineer) or a simple outline of ancestry ocurrences. Needless to say, I went for the second option:
 
 The CSV file looked like this:
-
-| Ancestry                      	| Copy 	| Chromossome 	| Start    	| End       	|
-|-------------------------------	|------	|-------------	|----------	|-----------	|
-| Broadly Northwestern European 	| 1    	| chr4        	| 79843697 	| 89063363  	|
-| Broadly Sub-Saharan African   	| 1    	| chr1        	| 24549064 	| 249222527 	|
-| ...                           	| ... 	| ...         	|          	|           	|
-{: .table .is-bordered .is-fullwidth}
+<div class="table-container">
+<table class="table is-bordered is-fullwidth">
+  <thead>
+    <tr>
+      <th>Ancestry</th>
+      <th>Copy</th>
+      <th>Chromossome</th>
+      <th>Start</th>
+      <th>End</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Broadly Northwestern European</td>
+      <td>1</td>
+      <td>chr4</td>
+      <td>79843697</td>
+      <td>89063363</td>
+    </tr>
+    <tr>
+      <td>Broadly Sub-Saharan African</td>
+      <td>1</td>
+      <td>chr1</td>
+      <td>24549064</td>
+      <td>249222527</td>
+    </tr>
+    <tr>
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 Something I had quite never done before though was parsing CSV data in JavaScript. I found a very useful library for this -  [https://github.com/d3/d3-fetch](d3-fetch) - which I'll explain how to implement it below. 
 

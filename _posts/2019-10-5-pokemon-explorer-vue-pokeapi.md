@@ -120,7 +120,7 @@ Then we'll move on to the fun section: fetching the PokéAPI!
 ### How to handle API Requests in Vue
 {: .intro .title .is-3 .has-text-weight-normal .has-line-spacing-tall}
 
-Using Vue means taking advantage of _Fetch_ to make HTTP calls way more simple than dealing with the old XMLHttpRequest request model. Our starter project already contains a transpiling utility to ES5 with Babel, so compatibility is not a huge concern here. Fetch will return a simple Promise that will make populating data from APIs a breeze based on whether the call is successful of note. Here's the basic syntax on how to use it:
+Using Vue means taking advantage of _Fetch_ to make HTTP calls way more simple than dealing with the old XMLHttpRequest request model. Our starter project already contains a transpiling utility to ES5 with Babel, so compatibility is not a huge concern here. Fetch will return a simple Promise that will make populating data from APIs a breeze based on whether the call is successful or not. Here's the basic syntax on how to use it:
 
 ```js
 fetch(`https://someapi.com?params`)
