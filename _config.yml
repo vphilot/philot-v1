@@ -4,6 +4,7 @@ highlighter: rouge
 
 exclude: ['assets/design', 'package.json', 'package-lock.json', 'README.md', 'gulpfile.js', 'Gemfile', 'Gemfile.lock', 'node_modules']
 keep_files: ['assets']
+include: [_redirects]
 
 kramdown:
   input: GFM
