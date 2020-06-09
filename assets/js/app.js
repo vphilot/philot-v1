@@ -10,8 +10,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
     swup.on("contentReplaced", function (event) {
         initMobileNavigation();
         initFooter();
+        if (document.querySelector('#instagram')){
         processInstagramData();
-        
+        }
         let elements = document.querySelectorAll('.swup-delay');
         if (elements) {
             for (i = 0; i < elements.length; i++) {
@@ -22,7 +23,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
     initMobileNavigation();
     initFooter();
-    processInstagramData();
+    if (document.querySelector('#instagram')){
+      processInstagramData();
+      }
 });
 
 function initMobileNavigation(){
@@ -75,23 +78,29 @@ function initFooter(){
     }, 2000);
   }
 
-function processInstagramData() {
-    if (document.querySelector('#instagram')){
-        const Http = new XMLHttpRequest();
-        const url =
-            'https://api.instagram.com/v1/users/self/media/recent?access_token=30784295.1dd5a77.021e5a56a1db49f89b3ee0f1c6dccd13&count=4';
-        Http.open("GET", url, true);
-        Http.send();
-        Http.onreadystatechange = function (e) {
-            if (this.readyState == 4 && this.status == 200) {
-                var json = JSON.parse(Http.responseText);
-                for (x in json.data) {
-                    document.querySelector('#instagram').innerHTML +=
-                        '<div class="column is-3-desktop is-3-tablet is-6-mobile image card-instagram"><a href="' + json.data[x].link + '" target="_blank"><figure class="image is-1by1"><img class="is-square is-rounded" src="' + json.data[
-                            x]
-                        .images.standard_resolution.url + '"></figure></a></div>'
-                }
+    function processInstagramData() {
+      console.log("jello");
+
+        fetch(`https://graph.instagram.com/me/media?fields=media_url,permalink,thumbnail_url&access_token=IGQVJVT1loZATh6SmhyRHVhMjlpMGlTWE5wQUtwbTJ6VS1uYkl1T05PbXBMNllBdTF4TmFMMUVzZAGhuUU92UXdCZA3I5VFBULTgzeV9PQ3FXa0w0SlVVYkxBNF9wZA29NeWVIMlpWSjZANTnJMLU1ZAcTFqRAZDZD`)
+          .then(response => {
+            if (response.status !== 200) {
+              console.log( `we have a problem with status code ${response.status}`);
+              return;
             }
-        }
+            response.json().then(data => {
+              console.log(data);
+              data.data.slice(0, 4).map(_item => {
+                populateInstagramItem(_item.permalink, _item.thumbnail_url ? _item.thumbnail_url : _item.media_url)
+              });
+            });
+          })
+          .catch(err => console.error(err)); 
     }
-}
+
+
+    function populateInstagramItem(permalink, thumb) {
+      document.querySelector('#instagram').innerHTML +=
+      `
+      <div class="column is-3-desktop is-3-tablet is-6-mobile image card-instagram"><a href="${permalink}" target="_blank"><figure class="image is-1by1"><img class="is-square is-rounded" src="${thumb}"></figure></a></div>
+      `
+    }

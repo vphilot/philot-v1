@@ -1,3 +1,8 @@
-# Redirects from what the browser requests to what we serve
-https://philot.space            https://philot.ca
-https://www.philot.space        https://www.philot.ca
+https://philot.space https://philot.ca 301!
+https://www.philot.space https://www.philot.ca 301!
+https://philot.space/* https://philot.ca/:splat 301!
+https://www.philot.space/* https://www.philot.ca/:splat 301!
+
+
+
+
