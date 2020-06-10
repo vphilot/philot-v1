@@ -67,19 +67,20 @@ function initFooter(){
       }
     ]
     let i = 0;
-  
-    setInterval(function(){
-       display.innerHTML = copy[i].name;
-       display.setAttribute("href", copy[i].url);
-       i++;
-       if (i == copy.length) {
-         i = 0;
-       }
-    }, 2000);
+
+    if (display) {
+      setInterval(function(){
+        display.innerHTML = copy[i].name;
+        display.setAttribute("href", copy[i].url);
+        i++;
+        if (i == copy.length) {
+          i = 0;
+        }
+     }, 2000);
+    }
   }
 
     function processInstagramData() {
-      console.log("jello");
 
         fetch(`https://graph.instagram.com/me/media?fields=media_url,permalink,thumbnail_url&access_token=IGQVJVT1loZATh6SmhyRHVhMjlpMGlTWE5wQUtwbTJ6VS1uYkl1T05PbXBMNllBdTF4TmFMMUVzZAGhuUU92UXdCZA3I5VFBULTgzeV9PQ3FXa0w0SlVVYkxBNF9wZA29NeWVIMlpWSjZANTnJMLU1ZAcTFqRAZDZD`)
           .then(response => {
@@ -88,7 +89,6 @@ function initFooter(){
               return;
             }
             response.json().then(data => {
-              console.log(data);
               data.data.slice(0, 4).map(_item => {
                 populateInstagramItem(_item.permalink, _item.thumbnail_url ? _item.thumbnail_url : _item.media_url)
               });
