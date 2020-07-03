@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109072453-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-109072453-1');
+  </script>
+  <meta charset="utf-8">
+  <title>Philot - Building a simple Back to Top button trigger with CSS and JavaScript</title>
+
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="I’ve been trying to decouple my projects from dependencies and libraries as much as I can lately. It not only gives me a good opportunity to exercise some sk...">
+
+  <meta property="og:site_name" content="">
+  
+  <meta property="og:title" content="Building a simple Back to Top button trigger with CSS and JavaScript">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="I’ve been trying to decouple my projects from dependencies and libraries as much as I can lately. It not only gives me a good opportunity to exercise some skills I have been neglecting but having the extra control over bugs and errors is also a welcome addition.
+
+"/>
+  
+  
+  <meta property="article:published_time" content="2020-07-02T00:00:00-04:00">
+  <meta property="article:author" content="http://localhost:4000/about/">
+  
+  <meta property="og:url" content="http://localhost:4000/2020/07/02/building-a-simple-back-to-top-button-trigger-with-css-and-javascript.html" />
+  
+  <meta itemprop="keywords" content="" />
+  
+  
+   
+  
+  <meta property="og:image" content="/assets/images/philot-meta-default.jpg">
+  
+  <meta name="twitter:site" content="@vphilot">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script src="/assets/js/swup.js"></script>
+  <script src="/assets/js/app.js"></script>
+</head>
+
+<body>
+  <nav class="swup">
+    <div class="navigation__toggle is-hidden-desktop"></div>
+<nav class="level" id="navigation">
+  <div class="container has-padding-lr-1">
+    <div class="level-left">
+    </div>
+    <div class="level-right is-uppercase">
+      
+      <div class="column is-1-desktop is-size-7 has-spacing-lg has-text-right">
+        <a href="/" >
+          Home
+        </a>
+      </div>
+      
+      <div class="column is-1-desktop is-size-7 has-spacing-lg has-text-right">
+        <a href="/about.html" >
+          About
+        </a>
+      </div>
+      
+      <div class="column is-1-desktop is-size-7 has-spacing-lg has-text-right">
+        <a href="/blog.html" >
+          Blog
+        </a>
+      </div>
+      
+      <div class="column is-1-desktop is-size-7 has-spacing-lg has-text-right">
+        <a href="/works.html" >
+          Work
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</nav>
+    <section class="section" id="header">
+    <div class="container has-padding-lr-1">
+
+        <div class="columns is-mobile is-multiline is-vbaseline">
+            <div class="column is-4-desktop is-8-mobile">
+                <h1 class="title is-1"><a href="/">Vinícius Philot</a></h1>
+            </div>
+            <div class="column is-3-desktop is-8-mobile">
+                <p class="has-spacing-sm is-size-7">Front End UI Developer</p>
+            </div>
+            <div class="column is-3-desktop is-6-mobile has-spacing-sm">
+                <a href="mailto:vphilo@gmail.com?subject=Hey%2C%20nice%20site%20you%20have">
+                    <p class="has-spacing-sm is-size-7">vphilot@gmail.com</p>
+                </a>
+                </div>
+            <div class="column is-2-desktop is-12-mobile">
+                <a 
+                aria-label="check my Linkedin in a new tab" 
+                href="https://www.linkedin.com/in/vphilot/?locale=en_US" 
+                target="_blank"
+                tabindex="0"
+                >
+                    <i aria-hidden="true" class="icon icon-linkedin">&#xf0e1;</i>
+                </a>
+                <a 
+                aria-label="check my Twitter in a new tab" 
+                href="https://twitter.com/vphilot" 
+                target="_blank"
+                tabindex="0"
+                >
+                    <i aria-hidden="true" class="icon icon-twitter">&#xf099;</i>
+                </a>
+                <a 
+                aria-label="check my Instagram in a new tab"
+                href="https://instagram.com/vphilot" 
+                target="_blank"
+                tabindex="0"
+                >
+                    <i aria-hidden="true" class="icon icon-instagram">&#xf16d;</i>
+                </a>
+                <a 
+                aria-label="check my Github in a new tab" 
+                href="https://github.com/vphilot" 
+                target="_blank"
+                tabindex="0"
+                >
+                    <i aria-hidden="true" class="icon icon-github">&#xf113;</i>
+                </a>
+                <a 
+                aria-label="check my Codepen in a new tab" 
+                href="https://codepen.io/vphilot/" 
+                target="_blank"
+                tabindex="0"
+                >
+                    <i aria-hidden="true" class="icon icon-codepen">&#xf32c;</i>
+                </a>
+                <a 
+                aria-label="check my Spotify in a new tab" 
+                href="https://open.spotify.com/user/12183629233" 
+                target="_blank"
+                tabindex="0"
+                >
+                    <i aria-hidden="true" class="icon icon-spotify">&#xf1bc;</i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+  </nav>
+  <main class="swup transition-fade"   style="background-color: #f4f4f4" >
+    <section class="section" id="post-building a simple back to top button trigger with css and javascript">
+    <div class="container has-padding-lr-1">
+        <div class="columns is-mobile is-multiline is-centered">
+            <div class="column is-8-desktop is-12-mobile">
+                <h1 class="title is-1 has-spacing-sm swup-delay transition-slide">Building a simple Back to Top button trigger with CSS and JavaScript</h1>
+                <div class="columns is-mobile is-multiline">
+                    <div class="column is-5-desktop is-6-mobile has-spacing-sm">
+                        <p class="has-spacing-sm is-size-6 has-border-black swup-delay transition-slide">
+                            02 Jul 2020
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <article class="swup-delay transition-fade">
+            <div class="columns is-mobile is-multiline is-centered">
+                <div class="column is-8-desktop is-12-tablet is-12-mobile">
+                    <p>I’ve been trying to decouple my projects from dependencies and libraries as much as I can lately. It not only gives me a good opportunity to exercise some skills I have been neglecting but having the extra control over bugs and errors is also a welcome addition.</p>
+
+<p>My latest adventure was the need to create a Back to Top button that would only show up after a specific element was on the page, and would then disappear when scrolled past a boundary container. Here is the basic acceptance criteria:</p>
+
+<ul class="has-bullet">
+  <li>A <strong>top container</strong> triggers the button visibility state to true when intersecting the viewport</li>
+  <li>A <strong>bottom container</strong> removes the visible state from the button</li>
+  <li><strong>Vanilla JS</strong> only</li>
+  <li>Back to Top button has a subtle opacity transition when changing states</li>
+  <li>Back to Top button cannot be clickable when hidden</li>
+</ul>
+
+<p>With these basic conditions given, let’s stretch our coding muscles and bootstrap this solution!</p>
+
+<h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="understanding-the-problem">Understanding the problem</h3>
+
+<p>Considering our markup to be composed of a Back to Top Button <code class="highlighter-rouge">#back-to-top</code>, a top container <code class="highlighter-rouge">#section-top</code>, and a bottom container <code class="highlighter-rouge">#section-bottom</code>, let’s start by storing pointer references to these DOM Elements:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">const</span> <span class="nx">btn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#back-to-top</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">topSection</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#section-top</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">bottomSection</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#section-bottom</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Our first step is finding where both our section elements will intersect the page scroll flow. It seems like a simple task as you can state it as <strong><em>just find their scroll position value relative to the vertical space available on the page!</em></strong>. Well, this is the solution itself, but JavasScript doesn’t provide a specific method to find these values straight away. Instead, it provides a lot of helper methods available at the object level to deal with these types of calculations.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="kd">const</span> <span class="nx">topScrollTreshold</span> <span class="o">=</span>  <span class="nx">topSection</span><span class="p">.</span><span class="nx">getBoundingClientRect</span><span class="p">().</span><span class="nx">top</span> <span class="o">+</span> <span class="nb">window</span><span class="p">.</span><span class="nx">pageYOffset</span>
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">getBoundingClientRect</code> method can be called from a DOM element (in this case, the topSection) and will return a <code class="highlighter-rouge">DOMRect</code> object with properties that describe its size and its position relative to the viewport:</p>
+
+<picture>
+    
+    <source type="image/webp" srcset="/assets/images/post/building-a-simple-back-to-top-button-trigger-with-css-and-javascript-1.webp" />
+    <source type="image/jpeg" srcset="/assets/images/post/building-a-simple-back-to-top-button-trigger-with-css-and-javascript-1.jpg" />
+    <img src="/assets/images/post/building-a-simple-back-to-top-button-trigger-with-css-and-javascript-1.jpg" alt="using element.getBoundingClientRect" title="using element.getBoundingClientRect" />
+</picture>
+
+<p>One important thing to consider is that the position properties (<code class="highlighter-rouge">top</code>, <code class="highlighter-rouge">left</code>, and so forth) returned by this method are <strong>relative to the viewport</strong> and are not aware of our total page height, which is fundamental for us to understand when the Back to Top button should show up. To work around this issue, we add the <code class="highlighter-rouge">top</code> value of our element to the current scroll position by accessing <code class="highlighter-rouge">window.PageYOffset</code>.
+Property names are also important here: <code class="highlighter-rouge">window.pageYOffset</code> is the same as <code class="highlighter-rouge">window.scrollY</code>, but it has native support on IE.</p>
+
+<p>A more in-depth look of the values <code class="highlighter-rouge">getBoundingClientRect</code> can also teach us that <code class="highlighter-rouge">padding</code> <code class="highlighter-rouge">and border-width</code> are added to the total width/height values if we’re using the standard box model:</p>
+
+<picture>
+    
+    <source type="image/webp" srcset="/assets/images/post/building-a-simple-back-to-top-button-trigger-with-css-and-javascript-2.webp" />
+    <source type="image/jpeg" srcset="/assets/images/post/building-a-simple-back-to-top-button-trigger-with-css-and-javascript-2.jpg" />
+    <img src="/assets/images/post/building-a-simple-back-to-top-button-trigger-with-css-and-javascript-2.jpg" alt="using element.getBoundingClientRect" title="using element.getBoundingClientRect" />
+</picture>
+
+<p>Making use of <code class="highlighter-rouge">box-sizing: border-box</code> is a way to get rid of this behaviour, but for our case just being mindful of this rule is enough.</p>
+
+<h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="observing-if-were-already-past-the-containers">Observing if we’re already past the containers</h3>
+
+<p>As a way of streamlining this process, we’re going to add a conditional logic to our <code class="highlighter-rouge">topScrollTreshold</code> so it returns a boolean. We’re now planning on making these variables live inside a <code class="highlighter-rouge">scroll</code> window event, so every time users scroll the variables will be checked and return a new set of values:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">scroll</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">const</span> <span class="nx">topScrollTreshold</span> <span class="o">=</span> <span class="nx">topSection</span><span class="p">.</span><span class="nx">getBoundingClientRect</span><span class="p">().</span><span class="nx">top</span> <span class="o">+</span> <span class="nb">window</span><span class="p">.</span><span class="nx">pageYOffset</span> <span class="o">&lt;</span> <span class="nb">window</span><span class="p">.</span><span class="nx">pageYOffset</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>We’re adding our top container <code class="highlighter-rouge">.top</code> property to <code class="highlighter-rouge">pageYOffset</code> to find its position relative to the entire page scroll, and then checking if that value is smaller than the page scroll position (<code class="highlighter-rouge">pageYOffset</code>). For the bottom container the logic has a little caveat:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">const</span> <span class="nx">bottomScrollTreshold</span> <span class="o">=</span> <span class="nx">btn</span><span class="p">.</span><span class="nx">getBoundingClientRect</span><span class="p">().</span><span class="nx">top</span> <span class="o">+</span> <span class="nb">window</span><span class="p">.</span><span class="nx">pageYOffset</span> <span class="o">&gt;</span> <span class="nx">bottomSection</span><span class="p">.</span><span class="nx">getBoundingClientRect</span><span class="p">().</span><span class="nx">top</span> <span class="o">+</span> <span class="nb">window</span><span class="p">.</span><span class="nx">pageYOffset</span><span class="p">;</span>
+</code></pre></div></div>
+<p>Back to our requirements:</p>
+
+<ul class="has-bullet">
+  <li>A bottom container removes the visible state from the button</li>
+</ul>
+
+<p><strong>There is a chance that nothing will live below the Bottom container and it will never reach the top of the page</strong>. According to MDN:</p>
+
+<blockquote>
+  <p>The read-only Window property pageYOffset (…) returns the number of pixels the document is currently scrolled along the vertical axis (that is, up or down) with a value of 0.0, indicating that the <strong>top edge of the Document</strong> is currently aligned with the <strong>top edge of the window’s content area</strong>.</p>
+</blockquote>
+
+<p>That’s the issue with measuring its position alone as we did to the Top container. Checking its intersection with the Back to Top button is a more fail-proof choice in this case.</p>
+
+<h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="a-little-css">A little CSS</h3>
+
+<p>The extra CSS to make this button work is pretty simple: in its default state (hidden), no <code class="highlighter-rouge">pointer-events</code> will be observed and the <code class="highlighter-rouge">opacity</code> is set to zero. We’re also positioning it as <code class="highlighter-rouge">fixed</code> relative to the viewport:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.back-to-top</span> <span class="p">{</span>
+  <span class="nl">position</span><span class="p">:</span> <span class="nb">fixed</span><span class="p">;</span>
+  <span class="nl">bottom</span><span class="p">:</span> <span class="m">5vh</span><span class="p">;</span>
+  <span class="nl">right</span><span class="p">:</span> <span class="m">5vw</span><span class="p">;</span>
+  <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">transition</span><span class="p">:</span> <span class="n">opacity</span> <span class="m">0.5s</span><span class="p">;</span>
+  <span class="nl">pointer-events</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.back-to-top.visible</span> <span class="p">{</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+    <span class="nl">pointer-events</span><span class="p">:</span> <span class="n">all</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">.visible</code> class describes its active state when it’s clickable and fully opaque.</p>
+
+<h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="putting-it-all-together">Putting it all together</h3>
+
+<p>The final steps are adding more simple logic to trigger our button state based on the final outcome of the threshold checkers:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//setting visibility based on scroll pos</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">topScrollTreshold</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">btn</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">"</span><span class="s2">visible</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">btn</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="dl">"</span><span class="s2">visible</span><span class="dl">"</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nx">btn</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="dl">"</span><span class="s2">visible</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">bottomScrollTreshold</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">btn</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="dl">"</span><span class="s2">visible</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+<p>See the codepen below:</p>
+
+<p class="codepen" data-height="556" data-theme-id="dark" data-default-tab="result" data-user="vphilot" data-slug-hash="jOWmpdb" data-preview="true" style="height: 556px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Simple Back to Top trigger with CSS + JS (Vanilla)">
+  <span>See the Pen <a href="https://codepen.io/vphilot/pen/jOWmpdb">
+  Simple Back to Top trigger with CSS + JS (Vanilla)</a> by Vinicius Philot (<a href="https://codepen.io/vphilot">@vphilot</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async="" src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+                </div>
+            </div>
+        </article>
+        <div class="columns is-mobile is-multiline is-centered">
+            <div class="column is-8-desktop is-12-mobile">
+                <div class="columns is-mobile is-multiline is-centered">
+                    
+                        <div class="column is-4-desktop is-6-mobile">
+                            <a href="/2020/05/10/how-to-make-mp4-videos-work-on-ios.html">
+                                <h1 class="intro title is-4 has-text-weight-light has-line-spacing-tall has-text-left">
+                                    Prev
+                                </h1>
+                                <svg x="0px" y="0px" viewBox="0 0 200 10">
+                                    <polyline points="6,0 1,5 6,10 " />
+                                    <line x1="1" y1="5" x2="200" y2="5" />
+                                </svg>
+                            </a>
+                        </div>
+                    
+                    <div class="column is-4-desktop is-hidden-mobile">
+                    </div>
+                    
+                        <div class="column is-4-desktop is-hidden-mobile">
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+    <section id="footer" class="container has-padding-1">
+    <div class="columns is-multiline is-centered">
+        <div class="column is-12">
+            <p class="is-size-7 has-text-grey has-spacing-sm">This website was developed with <i class="icon icon-heart-empty" aria-hidden="true">&#xe800;</i> and <a
+                    href="https://github.com" target="_blank" id="footerDisplay">github</a> </p>
+        </div>
+    </div>
+</div>
+  </main>
+
+
+</body>
+
+
+</html>
