@@ -70,7 +70,7 @@ import "buefy/dist/buefy.min.css";
 ### Building the search input and binding data
 {: .intro .title .is-3 .has-text-weight-normal .has-line-spacing-tall}
 
-For the Serch input, inside the `<template>` section of `Main.vue`, we can take advantage of Buefy's custom components (hence the "b-" before `button` and `input`) and use the **Vue directive** `v-model` to bind whatever's typed in the search form to a data object inside our component. This will make Vue react to changes every time a user types a character and give us methods to deal with that. `searchPokemon` will execute anytime the input is submitted, while `updateSuggestionsList` will execute immediately anytime our user types something.
+For the Search input, inside the `<template>` section of `Main.vue`, we can take advantage of Buefy's custom components (hence the "b-" before `button` and `input`) and use the **Vue directive** `v-model` to bind whatever's typed in the search form to a data object inside our component. This will make Vue react to changes every time a user types a character and give us methods to deal with that. `searchPokemon` will execute anytime the input is submitted, while `updateSuggestionsList` will execute immediately anytime our user types something.
 
 ```html
 <template>
@@ -86,7 +86,7 @@ For the Serch input, inside the `<template>` section of `Main.vue`, we can take 
 </template>
 ```
 
-Now it's time to bind these values to the data in our `Main.vue` in the `<script>` section. We'll also build the structure of our `result` object inside the component &mdash; we'll use this to store all the information we'll get back from the API and pass it onto our other component, `PokemonCard.vue`, which will react to changes and re-render whenever we get a new result. Interesting to notice that, even though we're not using TypeScript here, Vue requires us to specify what kind of data do expect from each property.
+Now it's time to bind these values to the data in our `Main.vue` in the `<script>` section. We'll also build the structure of our `result` object inside the component &mdash; we'll use this to store all the information we'll get back from the API and pass it onto our other component, `PokemonCard.vue`, which will react to changes and re-render whenever we get a new result. Interesting to notice that, even though we're not using TypeScript here, Vue requires us to specify what kind of data to expect from each property.
 
 ```js
 export default {
