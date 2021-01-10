@@ -106,7 +106,7 @@ Now we need a way to find the next direct sibling of our element, considering al
     const nextElementIndex = currentElementIndex + 1;
 ```
 
-Finally, we add a last check just to ensure our function is returnin an element (since there is a possibility our current element is the last on its parent's hierarchy). This is how the final result looks like:
+Finally, we add a last check just to ensure our function is returning an element (since there is a possibility our current element is the last on its parent's hierarchy). This is how the final result looks like:
 
 ```js
     function getElementNextSibling(element) {
@@ -129,7 +129,7 @@ Finally, we add a last check just to ensure our function is returnin an element 
 ### Working with IE and ES5
 {: .intro .title .is-3 .has-text-weight-normal .has-line-spacing-tall}
 
-Since the `Array.from` method might return an error on Interner Explorer even when using Babel, there's a last modification we can implement to make this function compatible with older browsers (if that's included in your target audience):
+Since the `Array.from` method might return an error on Internet Explorer even when using Babel, there's a last modification we can implement to make this function compatible with older browsers (if that's included in your target audience):
 
 ```js
 function getElementNextSibling(element) {

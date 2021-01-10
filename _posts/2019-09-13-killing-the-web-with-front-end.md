@@ -23,7 +23,7 @@ Using external libraries and frameworks must be analyzed on a project-based need
 
 Now and then I stumble upon Wordpress implementations serving 5mb pngs, mostly because marketers and content editors who are responsible for uploading assets don't have any idea of what image compression means. Is it their job after all? **I don't think so.** 
 
-I've seen even worst cases when Graphic designers send over print-ready files (in CMYK!!) for content editors to upload. And they will just upload it. What now, is it the designer's job to deliver assets consistent with the medium? **I would say a 100% yes.** I lot of people still struggle to understand the fluid nature of the web and still treat is as a print medium. 
+I've seen even worse cases when Graphic designers send over print-ready files (in CMYK!!) for content editors to upload. And they will just upload it. What now, is it the designer's job to deliver assets consistent with the medium? **I would say a 100% yes.** A lot of people still struggle to understand the fluid nature of the web and still treat it as a print medium. 
 
 ### Bottom line: we are everywhere now, and we must take accountability for the products we deliver.
 {: .intro .title .is-3 .has-text-weight-normal .has-line-spacing-tall}

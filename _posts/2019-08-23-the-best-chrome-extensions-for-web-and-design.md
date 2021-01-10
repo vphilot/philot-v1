@@ -10,7 +10,7 @@ Chrome is my daily driver for browinsg, testing, and developing for the web. Wit
 
  [**Clear Cache shortcut**](https://chrome.google.com/webstore/detail/clear-cache-shortcut/jnajhcakejgchhbjlchkfmdidgjefleg?authuser=0){:target="_blank"}: it does what it's supposed to: a simple bin icon that will flush your cache when clicked. It saves quite a few clicks compared to going to the Settings and it's very useful when using a CMS or checking if deployments were successful.
 
- [**The Great Suspender**](https://chrome.google.com/webstore/detail/the-great-suspender/klbibkeccnjlkjkiokjodocebajanakg?authuser=0){:target="_blank"}: I use this very often to prevent idle tabs from consuming all my RAM, CPU, and therefore battery life. It can automatically suspend tabs based on how much time you've spent way from them or manually suspend them.
+ [**The Great Suspender**](https://chrome.google.com/webstore/detail/the-great-suspender/klbibkeccnjlkjkiokjodocebajanakg?authuser=0){:target="_blank"}: I use this very often to prevent idle tabs from consuming all my RAM, CPU, and therefore battery life. It can automatically suspend tabs based on how much time you've spent away from them or manually suspend them.
 
 [**Infinity New Tab**](https://chrome.google.com/webstore/detail/infinity-new-tab-producti/dbfmnekepjoapopniengjbcpnbljalfg?authuser=0){:target="_blank"}: With so many 'new tab' apps out there, it's hard to find one without gimmicks or intrusive functionality &mdash; but at the same time, Chrome's default solution is very uninspired. I like Infinity New Tab because it allows me to customize very simple shortcuts to the websites and services I use the most, and it does the jobs without getting in my way.
 

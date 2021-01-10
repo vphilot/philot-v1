@@ -19,7 +19,7 @@ Throughout the source code, Chrome will highlight with *green* the rules being a
 
 Before we go thinking it's a matter of deleting every rule that shows up as red, hold my beer for a second. In this case for CBC, the source CSS is very tidy and organized, so it's easy for us to see that this CSS is a general big bundle for different pages inside their website. Even though this could be a little more modularized for performance matters, it's a common practice to have this kind of centralized styling process.
 
-A good way of testing this is clicking thought different pages inside their website while looking at the Coverage tab: the percentage of unused CSS will change drastically from one page to the other, and that means that several rules only apply to certain pages/components.
+A good way of testing this is clicking through different pages inside their website while looking at the Coverage tab: the percentage of unused CSS will change drastically from one page to the other, and that means that several rules only apply to certain pages/components.
 
 What I mean here is: **Coverage is a great way of finding unused CSS but it needs a lot of testing to avoid errors**. Another example is media queries: many are not being used on Desktop and therefore will show up as red (unused), but we have to be mindful that they will be used in another viewport sizes.
 

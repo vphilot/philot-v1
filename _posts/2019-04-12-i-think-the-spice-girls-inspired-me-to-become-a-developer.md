@@ -58,7 +58,7 @@ I am obsessed with transit maps, they have such a power and presence, and I beli
 
 In the late 1960s, New York’s MTA was undergoing a deep transformation of its network, including several line extensions and the unification of three former separate heavy rail operators under one single administration. After some delayed negotiation, Vignelli’s office was hired to redesign the whole system map, and they decided to draw it from scratch.
 
-Vignelli ditched everything New Yorkers knew about their transit system and looked beyond expectations, getting inspiration from the diagrammatic approaches already developed in Europe (especiallt the London Underground) by then. All the geographic reference was taken away so the whole system could fit harmoniously into one master map.
+Vignelli ditched everything New Yorkers knew about their transit system and looked beyond expectations, getting inspiration from the diagrammatic approaches already developed in Europe (especially the London Underground) by then. All the geographic reference was taken away so the whole system could fit harmoniously into one master map.
 
 ![Vignellis’ masterpiece](/assets/images/post/people-who-shaped-my-creative-persona-vignelli-1.jpg "Vignellis’ masterpiece")
 
