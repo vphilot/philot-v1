@@ -1,0 +1,105 @@
+I"%+<p>My journey with mainstream web browsers has been interesting, to say the least. After using Chrome for many years, I decided to move to Firefox. Then Firefox Nightly. Then I made another move to Firefox Developer Edition, and I thought my journey was over. I had found the perfect browser.</p>
+
+<p>Being a web developer sometimes means having 50 tabs opened simultaneously, and keeping another 50 you have to check eventually but not right now. I know there are many tab management add-ons out there, but I never found any that was particularly fit to my workflow. I was observing that over time and under a heavy load Firefox can have a hefty battery and memory management toll on my computer (similar to what happened to Chrome and made me leave it, albeit a little better) and it was time to try another browser.</p>
+
+<p>I chose Safari. I know, now the most obvious choice for a web developer, but my idea was having a daily choice for browsing and still keeping Firefox Developer Edition and Chrome for testing and troubleshooting.</p>
+
+<h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="so-whats-wrong-with-safari">So what’s wrong with Safari?</h3>
+
+<p>Not much, really. It’s webkit, so most modern technologies are supported without a lot of trouble (I mean polyfills and fallbacks). It’s also important to know that Safari seems to focus a lot more on stability than performance, making it feel a little slower than Firefox or Chrome. But I really wanted to be able to keep my 80+ tabs open without having my battery drop 50% an hour and see my RAM usage in a constant spike.</p>
+
+<p>The most problematic feature of Safari in my opinion is the New Tab implementation. While Chrome and Firefox will let you move favourites around, pin new urls, and delete the ones you don’t see fit, Safari has a very (very Apple-esque) rigid implementation where you can either choose to see your <strong>Top Sites</strong> (the ones you visit most frequently), your <strong>Favourites</strong> (the ones you actively bookmarked), or both. It’s impossible to move them around, remove them, or pin your most used ones:</p>
+
+<p><img src="/assets/images/post/2021-01-01.jpg" alt="Safari's new tab" title="Safari's new tab" /></p>
+
+<h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="the-stack-and-why-svelte">The stack and why Svelte?</h3>
+
+<p>Working with React and / or Vue on a daily basis, it’s very likely that you probably heard of <a href="https://svelte.dev">Svelte</a>. As a JavaScript framework, it promises to eliminate abstraction layers we take for granted now (such as the Virtual DOM) to deliver highly performant web apps. It also has a very modest footprint compared to most mainstream frameworks. Since I never had a chance to use it before, I though this small side project would be an interesting chance to experiment with it.</p>
+
+<p>To get started, I just replicated the starter project:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npx degit sveltejs/template new-tab
+<span class="nv">$ </span><span class="nb">cd </span>new-tab
+<span class="nv">$ </span>npm i
+</code></pre></div></div>
+
+<h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="storing-and-retrieving-data-with-airtable">Storing and retrieving data with Airtable</h3>
+
+<p><a href="https://svelte.dev">AirTable</a> is an awesome spreadsheed-database hybrid that I believe is perfect for this use case. We want to be able to update entries on the cloud and have it reflected on the front end as quickly as possible. Setting up a whole back end for this would be just overkill. Airtable also exposes your data as an API which is simply amazing. Creating your first document is just as simple as looking at a spreadsheet and start typing:</p>
+
+<p><img src="/assets/images/post/2021-01-02.jpg" alt="a simple Airtable document" title="a simple Airtable document" /></p>
+
+<p>One interesting thing about the service is that it only exposes its more complex features as you need them. In this case, I wanted each entry to have a unique color - so I specified a new egulntry type with a default value:</p>
+
+<p><img src="/assets/images/post/2021-01-03.jpg" alt="entry types in Airtable" title="entry types in Airtable" /></p>
+
+<p>Retrieving this data is just as fetching the API with Svelte’s <code class="language-plaintext highlighter-rouge">onMount</code> hook inside <code class="language-plaintext highlighter-rouge">App.svelte</code>:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">let</span> <span class="nx">links</span> <span class="o">=</span> <span class="kc">null</span>
+
+  <span class="nx">onMount</span><span class="p">(</span><span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span>
+      <span class="s2">`https://api.airtable.com/v0/appbHvOKjQPdszt4L/new-tab?api_key=</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">AIRTABLE_API_KEY</span><span class="p">}</span><span class="s2">&amp;view=Grid%20view`</span>
+    <span class="p">)</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">links</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">records</span>
+      <span class="p">})</span>
+  <span class="p">})</span>
+</code></pre></div></div>
+
+<p>And rendering the links list using Svelte’s template syntax (<code class="language-plaintext highlighter-rouge">#</code>):</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"links-section"</span><span class="nt">&gt;</span>
+  {#if links}
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"links-wrapper"</span><span class="nt">&gt;</span>
+      {#each links as link}
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"link-badge"</span> <span class="na">style=</span><span class="s">"background-color: {link.fields.Colour}"</span> <span class="nt">&gt;&lt;/i&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"link-button"</span> <span class="na">onclick=</span><span class="s">"location.href='{link.fields.URL}'"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>
+              {link.fields.Name}
+            <span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      {/each}
+    <span class="nt">&lt;/div&gt;</span>
+  {/if}
+<span class="nt">&lt;/section&gt;</span>
+</code></pre></div></div>
+
+<h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="google-search-and-a-few-tweaks">Google search and a few tweaks</h3>
+
+<p><img src="/assets/images/post/2021-01-05.jpg" alt="New tab v0" title="new tab v0" /></p>
+
+<p>After having the an initial version setup, it was time to add a basic Google search module and tweak the styling a little bit:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"search"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;form</span> <span class="na">on:submit</span><span class="err">|</span><span class="na">preventDefault=</span><span class="s">{handleSubmit}</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">autofocus</span> <span class="na">bind:value=</span><span class="s">{searchValue}</span> <span class="na">placeholder=</span><span class="s">"Google Search"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">const</span> <span class="nx">handleSubmit</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+	  <span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="s2">`http://www.google.com/search?q=</span><span class="p">${</span><span class="nx">searchValue</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">body</span> <span class="p">{</span>
+  <span class="c">/* making sure the new tabs fonts are aligned with MacOS system fonts: */</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="n">-apple-system</span><span class="p">,</span> <span class="n">BlinkMacSystemFont</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/post/2021-01-06.jpg" alt="New tab v0.1" title="new tab v0.1" /></p>
+
+<h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="deploying-performance-and-wrap-up">Deploying, performance, and wrap up</h3>
+
+<p>Deploying the app to <a href="https://netlify.com/">Netlify</a> was just as simple as connecting the repo, setting the build command to <code class="language-plaintext highlighter-rouge">npm run build</code> and setting the correct <code class="language-plaintext highlighter-rouge">AIRTABLE_API_KEY</code> enrivonment variable (sites -&gt; settings -&gt; Environment -&gt; Edit variables).</p>
+
+<p>Just by using simple semantic html and Svelte, the page got a 99 score on Lighthouse out of the box which, even given the simplicity, is pretty impressive:</p>
+
+<p><img src="/assets/images/post/2021-01-04.jpg" alt="New tab v0.1" title="new tab v0.1" /></p>
+
+<p>After that, it was just a matter of setting my new tab on Safari to default to the deployed page. My first experience with Svelte was great - it’s extremely simple to use and behaves as you expect. I’m excited to try using it for more complex projects in the future.</p>
+
+:ET

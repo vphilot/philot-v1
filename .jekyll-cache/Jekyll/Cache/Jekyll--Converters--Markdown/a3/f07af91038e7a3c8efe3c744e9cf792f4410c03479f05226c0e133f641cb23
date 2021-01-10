@@ -1,0 +1,23 @@
+I"¨<p>Hereâ€™s a nice polyfill by <a href="https://github.com/bfred-it/object-fit-images">Federico Brigante</a> for the object-fit property which is not natively supported by Internet Explorer.</p>
+
+<p>HTML:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"ofi.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">'img-fit '</span> <span class="na">src=</span><span class="s">'image.jpg'</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>CSS:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.img-fit</span>     <span class="p">{</span>
+	<span class="nl">object-fit</span><span class="p">:</span> <span class="n">contain</span><span class="p">;</span>
+    <span class="c">/* font-family necessary for IE */</span>
+	<span class="nl">font-family</span><span class="p">:</span> <span class="s2">'object-fit: contain;'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>JavaScript:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//when content loaded</span>
+<span class="nx">objectFitImages</span><span class="p">();</span>
+</code></pre></div></div>
+:ET

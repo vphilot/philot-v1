@@ -1,0 +1,101 @@
+I"A<p>The Cineplex VIP program is Canada’s leading premium experience in movie theatres. Working directly with the VIP marketing team, I was asked to come up with a more elegant and functional solution to the online menu they had implemented a few years ago.</p>
+
+<p>The main issue was how extensive the VIP Menu is — a long scroll of items hard to categorize , especially in a mobile screen.  Implementing a search and filter feature was never an option due to the limitations of the CMS as it would involve too many external resources. We had to implement the best solution possible with the least amount of code and impact on performance.</p>
+
+<h3 class="intro title is-2 has-text-weight-normal has-line-spacing-tall" id="layout">Layout</h3>
+
+<p>Considering the large amount of information we had to display, quick scanning for items was a fundamental part of accessing the page. I wanted users to immediately be able to understand how information is structured so they could jump to decision making right away.</p>
+
+<picture>
+    
+    <source type="image/webp" srcset="../assets/images/work/vip-2.webp" />
+    <source type="image/jpeg" srcset="../assets/images/work/vip-2.jpg" />
+    <img src="../assets/images/work/vip-2.jpg" alt="Layout before the changes" title="Layout before the changes" />
+</picture>
+
+<p><em>Layout before the changes</em></p>
+
+<p>We achieved this by changing from a multi column layout to a simpler list, decreasing significantly the height of each item and showing more content right away.</p>
+
+<picture>
+    
+    <source type="image/webp" srcset="../assets/images/work/vip-3.webp" />
+    <source type="image/jpeg" srcset="../assets/images/work/vip-3.jpg" />
+    <img src="../assets/images/work/vip-3.jpg" alt="Before: multi column -&gt; After: list layout" title="Before: multi column -&gt; After: list layout" />
+</picture>
+
+<p><em>Before: multi column -&gt; After: list layout</em></p>
+
+<h3 class="intro title is-2 has-text-weight-normal has-line-spacing-tall" id="typography">Typography</h3>
+
+<p>Another point of interest in this project was how typography was working against functionality by providing so many different components. I chose to simplify the type components here so they would make more sense in a structured list and could also serve as a reference point for quick scanning the whole menu.</p>
+
+<picture>
+    
+    <source type="image/webp" srcset="../assets/images/work/vip-4.webp" />
+    <source type="image/jpeg" srcset="../assets/images/work/vip-4.jpg" />
+    <img src="../assets/images/work/vip-4.jpg" alt="Type elements: before -&gt; after" title="Type elements: before -&gt; after" />
+</picture>
+
+<p><em>Type elements: before -&gt; after</em></p>
+
+<picture>
+    
+    <source type="image/webp" srcset="../assets/images/work/vip-5.webp" />
+    <source type="image/jpeg" srcset="../assets/images/work/vip-5.jpg" />
+    <img src="../assets/images/work/vip-5.jpg" alt="Dietary restrictions badges: before -&gt; after" title="Dietary restrictions badges: before -&gt; after" />
+</picture>
+
+<p><em>Dietary restrictions badges: before -&gt; after</em></p>
+
+<h3 class="intro title is-2 has-text-weight-normal has-line-spacing-tall" id="functionality">Functionality</h3>
+
+<picture>
+    
+    <source type="image/webp" srcset="../assets/images/work/vip-6.webp" />
+    <source type="image/jpeg" srcset="../assets/images/work/vip-6.jpg" />
+    <img src="../assets/images/work/vip-6.jpg" alt="Revamped accordion layout" title="Revamped accordion layout" />
+</picture>
+
+<p><em>Revamped accordion layout</em></p>
+
+<p>After some research, I understood that the accordion functionality was still the best one to go here. Being able to expand and collapse sections was a good way of letting users know where they were in the extensive list, while providing a quick access to another categories.</p>
+
+<picture>
+    
+    <source type="image/webp" srcset="../assets/images/work/vip-7.webp" />
+    <source type="image/jpeg" srcset="../assets/images/work/vip-7.jpg" />
+    <img src="../assets/images/work/vip-7.jpg" alt="High fidelity  wireframes ready for development" title="High fidelity  wireframes ready for development" />
+</picture>
+
+<p><em>High fidelity  wireframes ready for development</em></p>
+
+<p>I decided to change the implementation a bit with a ‘Jump to’ sub menu inside each category that would allow users to quickly scan and locate items of interest.</p>
+
+<picture>
+    
+    <source type="image/webp" srcset="../assets/images/work/vip-8.webp" />
+    <source type="image/jpeg" srcset="../assets/images/work/vip-8.jpg" />
+    <img src="../assets/images/work/vip-8.jpg" alt="Jump Menu implementation" title="Jump Menu implementation" />
+</picture>
+
+<p><em>Jump Menu implementation</em></p>
+
+<h3 class="intro title is-2 has-text-weight-normal has-line-spacing-tall" id="kpis">KPIs:</h3>
+
+<p><strong>75% less CSS</strong> by refactoring the whole stylesheet and taking advantage of top level Bootstrap already loaded in the page by default;</p>
+
+<p><strong>95% less JavaScript</strong> by getting rid of all external JS libraries and opting for a vanilla implementation instead of jQuery;</p>
+
+<p><strong>Google Pagespeed Insights</strong> score went from <strong>5</strong> to <strong>79</strong> by removing blocking resources and optimizing image data.</p>
+
+<picture>
+    
+    <source type="image/webp" srcset="../assets/images/work/vip-1.webp" />
+    <source type="image/jpeg" srcset="../assets/images/work/vip-1.jpg" />
+    <img src="../assets/images/work/vip-1.jpg" alt="Before and After: Performance improvements" title="Before and After: Performance improvements" />
+</picture>
+
+<p><em>Before and After: Performance improvements</em></p>
+
+:ET

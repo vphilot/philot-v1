@@ -23,14 +23,13 @@
   <meta property="og:title" content="Building a simple Back to Top button trigger with CSS and JavaScript">
   <meta property="og:type" content="article">
   <meta property="og:description" content="I’ve been trying to decouple my projects from dependencies and libraries as much as I can lately. It not only gives me a good opportunity to exercise some skills I have been neglecting but having the extra control over bugs and errors is also a welcome addition.
-
 "/>
   
   
   <meta property="article:published_time" content="2020-07-02T00:00:00-04:00">
-  <meta property="article:author" content="http://localhost:4000/about/">
+  <meta property="article:author" content="/about/">
   
-  <meta property="og:url" content="http://localhost:4000/2020/07/02/building-a-simple-back-to-top-button-trigger-with-css-and-javascript.html" />
+  <meta property="og:url" content="/2020/07/02/building-a-simple-back-to-top-button-trigger-with-css-and-javascript.html" />
   
   <meta itemprop="keywords" content="" />
   
@@ -185,7 +184,7 @@
 
 <h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="understanding-the-problem">Understanding the problem</h3>
 
-<p>Considering our markup to be composed of a Back to Top Button <code class="highlighter-rouge">#back-to-top</code>, a top container <code class="highlighter-rouge">#section-top</code>, and a bottom container <code class="highlighter-rouge">#section-bottom</code>, let’s start by storing pointer references to these DOM Elements:</p>
+<p>Considering our markup to be composed of a Back to Top Button <code class="language-plaintext highlighter-rouge">#back-to-top</code>, a top container <code class="language-plaintext highlighter-rouge">#section-top</code>, and a bottom container <code class="language-plaintext highlighter-rouge">#section-bottom</code>, let’s start by storing pointer references to these DOM Elements:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">const</span> <span class="nx">btn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#back-to-top</span><span class="dl">"</span><span class="p">);</span>
     <span class="kd">const</span> <span class="nx">topSection</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#section-top</span><span class="dl">"</span><span class="p">);</span>
@@ -197,7 +196,7 @@
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="kd">const</span> <span class="nx">topScrollTreshold</span> <span class="o">=</span>  <span class="nx">topSection</span><span class="p">.</span><span class="nx">getBoundingClientRect</span><span class="p">().</span><span class="nx">top</span> <span class="o">+</span> <span class="nb">window</span><span class="p">.</span><span class="nx">pageYOffset</span>
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">getBoundingClientRect</code> method can be called from a DOM element (in this case, the topSection) and will return a <code class="highlighter-rouge">DOMRect</code> object with properties that describe its size and its position relative to the viewport:</p>
+<p>The <code class="language-plaintext highlighter-rouge">getBoundingClientRect</code> method can be called from a DOM element (in this case, the topSection) and will return a <code class="language-plaintext highlighter-rouge">DOMRect</code> object with properties that describe its size and its position relative to the viewport:</p>
 
 <picture>
     
@@ -206,10 +205,10 @@
     <img src="/assets/images/post/building-a-simple-back-to-top-button-trigger-with-css-and-javascript-1.jpg" alt="using element.getBoundingClientRect" title="using element.getBoundingClientRect" />
 </picture>
 
-<p>One important thing to consider is that the position properties (<code class="highlighter-rouge">top</code>, <code class="highlighter-rouge">left</code>, and so forth) returned by this method are <strong>relative to the viewport</strong> and are not aware of our total page height, which is fundamental for us to understand when the Back to Top button should show up. To work around this issue, we add the <code class="highlighter-rouge">top</code> value of our element to the current scroll position by accessing <code class="highlighter-rouge">window.PageYOffset</code>.
-Property names are also important here: <code class="highlighter-rouge">window.pageYOffset</code> is the same as <code class="highlighter-rouge">window.scrollY</code>, but it has native support on IE.</p>
+<p>One important thing to consider is that the position properties (<code class="language-plaintext highlighter-rouge">top</code>, <code class="language-plaintext highlighter-rouge">left</code>, and so forth) returned by this method are <strong>relative to the viewport</strong> and are not aware of our total page height, which is fundamental for us to understand when the Back to Top button should show up. To work around this issue, we add the <code class="language-plaintext highlighter-rouge">top</code> value of our element to the current scroll position by accessing <code class="language-plaintext highlighter-rouge">window.PageYOffset</code>.
+Property names are also important here: <code class="language-plaintext highlighter-rouge">window.pageYOffset</code> is the same as <code class="language-plaintext highlighter-rouge">window.scrollY</code>, but it has native support on IE.</p>
 
-<p>A more in-depth look of the values <code class="highlighter-rouge">getBoundingClientRect</code> can also teach us that <code class="highlighter-rouge">padding</code> <code class="highlighter-rouge">and border-width</code> are added to the total width/height values if we’re using the standard box model:</p>
+<p>A more in-depth look of the values <code class="language-plaintext highlighter-rouge">getBoundingClientRect</code> can also teach us that <code class="language-plaintext highlighter-rouge">padding</code> <code class="language-plaintext highlighter-rouge">and border-width</code> are added to the total width/height values if we’re using the standard box model:</p>
 
 <picture>
     
@@ -218,18 +217,18 @@ Property names are also important here: <code class="highlighter-rouge">window.p
     <img src="/assets/images/post/building-a-simple-back-to-top-button-trigger-with-css-and-javascript-2.jpg" alt="using element.getBoundingClientRect" title="using element.getBoundingClientRect" />
 </picture>
 
-<p>Making use of <code class="highlighter-rouge">box-sizing: border-box</code> is a way to get rid of this behaviour, but for our case just being mindful of this rule is enough.</p>
+<p>Making use of <code class="language-plaintext highlighter-rouge">box-sizing: border-box</code> is a way to get rid of this behaviour, but for our case just being mindful of this rule is enough.</p>
 
 <h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="observing-if-were-already-past-the-containers">Observing if we’re already past the containers</h3>
 
-<p>As a way of streamlining this process, we’re going to add a conditional logic to our <code class="highlighter-rouge">topScrollTreshold</code> so it returns a boolean. We’re now planning on making these variables live inside a <code class="highlighter-rouge">scroll</code> window event, so every time users scroll the variables will be checked and return a new set of values:</p>
+<p>As a way of streamlining this process, we’re going to add a conditional logic to our <code class="language-plaintext highlighter-rouge">topScrollTreshold</code> so it returns a boolean. We’re now planning on making these variables live inside a <code class="language-plaintext highlighter-rouge">scroll</code> window event, so every time users scroll the variables will be checked and return a new set of values:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">scroll</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
    <span class="kd">const</span> <span class="nx">topScrollTreshold</span> <span class="o">=</span> <span class="nx">topSection</span><span class="p">.</span><span class="nx">getBoundingClientRect</span><span class="p">().</span><span class="nx">top</span> <span class="o">+</span> <span class="nb">window</span><span class="p">.</span><span class="nx">pageYOffset</span> <span class="o">&lt;</span> <span class="nb">window</span><span class="p">.</span><span class="nx">pageYOffset</span><span class="p">;</span>
   <span class="p">}</span>
 </code></pre></div></div>
 
-<p>We’re adding our top container <code class="highlighter-rouge">.top</code> property to <code class="highlighter-rouge">pageYOffset</code> to find its position relative to the entire page scroll, and then checking if that value is smaller than the page scroll position (<code class="highlighter-rouge">pageYOffset</code>). For the bottom container the logic has a little caveat:</p>
+<p>We’re adding our top container <code class="language-plaintext highlighter-rouge">.top</code> property to <code class="language-plaintext highlighter-rouge">pageYOffset</code> to find its position relative to the entire page scroll, and then checking if that value is smaller than the page scroll position (<code class="language-plaintext highlighter-rouge">pageYOffset</code>). For the bottom container the logic has a little caveat:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">const</span> <span class="nx">bottomScrollTreshold</span> <span class="o">=</span> <span class="nx">btn</span><span class="p">.</span><span class="nx">getBoundingClientRect</span><span class="p">().</span><span class="nx">top</span> <span class="o">+</span> <span class="nb">window</span><span class="p">.</span><span class="nx">pageYOffset</span> <span class="o">&gt;</span> <span class="nx">bottomSection</span><span class="p">.</span><span class="nx">getBoundingClientRect</span><span class="p">().</span><span class="nx">top</span> <span class="o">+</span> <span class="nb">window</span><span class="p">.</span><span class="nx">pageYOffset</span><span class="p">;</span>
 </code></pre></div></div>
@@ -249,7 +248,7 @@ Property names are also important here: <code class="highlighter-rouge">window.p
 
 <h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="a-little-css">A little CSS</h3>
 
-<p>The extra CSS to make this button work is pretty simple: in its default state (hidden), no <code class="highlighter-rouge">pointer-events</code> will be observed and the <code class="highlighter-rouge">opacity</code> is set to zero. We’re also positioning it as <code class="highlighter-rouge">fixed</code> relative to the viewport:</p>
+<p>The extra CSS to make this button work is pretty simple: in its default state (hidden), no <code class="language-plaintext highlighter-rouge">pointer-events</code> will be observed and the <code class="language-plaintext highlighter-rouge">opacity</code> is set to zero. We’re also positioning it as <code class="language-plaintext highlighter-rouge">fixed</code> relative to the viewport:</p>
 
 <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.back-to-top</span> <span class="p">{</span>
   <span class="nl">position</span><span class="p">:</span> <span class="nb">fixed</span><span class="p">;</span>
@@ -266,7 +265,7 @@ Property names are also important here: <code class="highlighter-rouge">window.p
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">.visible</code> class describes its active state when it’s clickable and fully opaque.</p>
+<p>The <code class="language-plaintext highlighter-rouge">.visible</code> class describes its active state when it’s clickable and fully opaque.</p>
 
 <h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="putting-it-all-together">Putting it all together</h3>
 
@@ -316,7 +315,7 @@ Property names are also important here: <code class="highlighter-rouge">window.p
                     </div>
                     
                         <div class="column is-4-desktop is-6-mobile">
-                            <a href="/2020/08/18/javascript-get-element-next-sibling.html">
+                            <a href="/2020/08/18/javascript-get-element-next-sibling-copy.html">
                                 <h1 class="intro title is-4 has-text-weight-light has-line-spacing-tall has-text-right">
                                     Next
                                 </h1>

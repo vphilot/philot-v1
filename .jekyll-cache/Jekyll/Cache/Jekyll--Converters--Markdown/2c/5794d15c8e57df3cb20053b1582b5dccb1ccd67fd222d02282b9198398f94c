@@ -1,0 +1,2 @@
+I"ê<p>Detecting Internet Explorer is an important part of some projects, especially when implementing any kind of progressive enhancement technique. Unfortunately, <a href="https://blogs.msdn.microsoft.com/ieinternals/2013/09/21/internet-explorer-11s-many-user-agent-strings/">Microsoft changes the User Agent string to make it look ike something else</a>. Here‚Äôs a quick workaround to detect IE:</p>
+:ET

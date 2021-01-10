@@ -1,0 +1,4 @@
+I"M<p>Maintaining and updating web projects developed by other people has its specificities. Sometimes you’re working on a page or application that has been maintained by several different people over the years and you realize stylesheets can become <em>messy</em>, to say the least. 
+w
+There are great tools out there such as <a href="https://www.purgecss.com/" target="_blank">PurgeCSS</a> that will automate this process for us, but when development is made on a CMS and/or you don’t have the time to set up a local developing environment, Chrome Dev Tools is a great alternative.</p>
+:ET
