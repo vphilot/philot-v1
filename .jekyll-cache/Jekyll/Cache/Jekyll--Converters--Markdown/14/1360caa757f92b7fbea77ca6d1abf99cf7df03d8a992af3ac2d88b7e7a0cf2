@@ -1,0 +1,56 @@
+I"?<p>There are many Share This implementations out there, but my goal with this one was to provide something that’s highly customizable, lightweight, and requires no external libraries.</p>
+
+<p>HTML:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"share"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Share this:<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.facebook.com/sharer/sharer.php?u={url}"</span> <span class="na">class=</span><span class="s">"share-btn"</span><span class="nt">&gt;</span>Facebook<span class="nt">&lt;/a&gt;</span> 
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://twitter.com/share?url={url}&amp;amp;text={text}"</span> <span class="na">class=</span><span class="s">"share-btn"</span><span class="nt">&gt;</span>Twitter<span class="nt">&lt;/a&gt;</span> 
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.linkedin.com/shareArticle?mini=true&amp;amp;url={url}"</span> <span class="na">class=</span><span class="s">"share-btn"</span><span class="nt">&gt;</span>Linkedin<span class="nt">&lt;/a&gt;</span> 
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"mailto:?subject={subject}&amp;amp;body={url}"</span> <span class="na">class=</span><span class="s">"share-btn"</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>CSS:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.share</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+    <span class="nl">justify-content</span><span class="p">:</span> <span class="n">space-evenly</span><span class="p">;</span>
+    <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="nl">flex-wrap</span><span class="p">:</span> <span class="n">wrap</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="nc">.share</span> <span class="nt">a</span> <span class="p">{</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#00a990</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0.5rem</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>JavaScript:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">DOMContentLoaded</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">shareButtons</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">.share-btn</span><span class="dl">"</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">shareButtons</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">[].</span><span class="nx">forEach</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">shareButtons</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">button</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">width</span> <span class="o">=</span> <span class="mi">650</span><span class="p">,</span>
+                    <span class="nx">height</span> <span class="o">=</span> <span class="mi">450</span><span class="p">;</span>
+                <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+                <span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">href</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Share Dialog</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">menubar=no,toolbar=no,resizable=yes,scrollbars=yes,width=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">width</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">,height=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">height</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">,top=</span><span class="dl">'</span> <span class="o">+</span> <span class="p">(</span><span class="nx">screen</span><span class="p">.</span><span class="nx">height</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="nx">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">,left=</span><span class="dl">'</span> <span class="o">+</span> <span class="p">(</span><span class="nx">screen</span><span class="p">.</span><span class="nx">width</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="nx">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">));</span>
+            <span class="p">});</span>
+        <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Codepen:</p>
+
+<p class="codepen" data-height="267" data-theme-id="dark" data-default-tab="js,result" data-user="vphilot" data-slug-hash="vqExLZ" data-preview="true" style="height: 267px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Quick Share Buttons">
+  <span>See the Pen <a href="https://codepen.io/vphilot/pen/vqExLZ/">
+  Quick Share Buttons</a> by Vinicius Philot (<a href="https://codepen.io/vphilot">@vphilot</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async="" src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+:ET

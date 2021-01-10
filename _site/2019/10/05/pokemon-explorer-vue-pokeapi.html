@@ -23,14 +23,13 @@
   <meta property="og:title" content="Building a Pokémon Explorer with Vue and PokéAPI">
   <meta property="og:type" content="article">
   <meta property="og:description" content="2019 is swamped with JavaScript frameworks and we have arrived in a moment when choosing your favourite is a matter of project-based preference only. From the most mature ones, I would say I like React but I love Vue. I believe there’s a simple elegance in the way it handles data and a lot of flexibility in how it can be used, from a simple component to huge PWAs.
-
 "/>
   
   
   <meta property="article:published_time" content="2019-10-05T00:00:00-04:00">
-  <meta property="article:author" content="http://localhost:4000/about/">
+  <meta property="article:author" content="/about/">
   
-  <meta property="og:url" content="http://localhost:4000/2019/10/05/pokemon-explorer-vue-pokeapi.html" />
+  <meta property="og:url" content="/2019/10/05/pokemon-explorer-vue-pokeapi.html" />
   
   <meta itemprop="keywords" content="" />
   
@@ -206,7 +205,7 @@
 └── README.md
 </code></pre></div></div>
 
-<p>I chose to keep it simple and only have 2 main components: <code class="highlighter-rouge">Main.vue</code> and <code class="highlighter-rouge">PokemonCard.vue</code>. Even though the project is very small, I chose to stick with <a href="https://vuejs.org/v2/guide/single-file-components.html">Single File Components</a> because it’s a good way to get familiar with the framework’s best practices. This means that HTML, CSS, and (vue-specific) JS will live inside the same file, making it easier to isolate functionality and troubleshoot bugs on a beginner level.</p>
+<p>I chose to keep it simple and only have 2 main components: <code class="language-plaintext highlighter-rouge">Main.vue</code> and <code class="language-plaintext highlighter-rouge">PokemonCard.vue</code>. Even though the project is very small, I chose to stick with <a href="https://vuejs.org/v2/guide/single-file-components.html">Single File Components</a> because it’s a good way to get familiar with the framework’s best practices. This means that HTML, CSS, and (vue-specific) JS will live inside the same file, making it easier to isolate functionality and troubleshoot bugs on a beginner level.</p>
 
 <h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="picking-a-styled-component-library">Picking a styled component library</h3>
 
@@ -215,7 +214,7 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm <span class="nb">install </span>buefy
 </code></pre></div></div>
 
-<p>After that, we have to import it in our top-level <code class="highlighter-rouge">main.js</code> so it becomes available to all the Vue instances:</p>
+<p>After that, we have to import it in our top-level <code class="language-plaintext highlighter-rouge">main.js</code> so it becomes available to all the Vue instances:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">vue</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="nx">App</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./App.vue</span><span class="dl">"</span><span class="p">;</span>
@@ -225,7 +224,7 @@
 
 <h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="building-the-search-input-and-binding-data">Building the search input and binding data</h3>
 
-<p>For the Serch input, inside the <code class="highlighter-rouge">&lt;template&gt;</code> section of <code class="highlighter-rouge">Main.vue</code>, we can take advantage of Buefy’s custom components (hence the “b-“ before <code class="highlighter-rouge">button</code> and <code class="highlighter-rouge">input</code>) and use the <strong>Vue directive</strong> <code class="highlighter-rouge">v-model</code> to bind whatever’s typed in the search form to a data object inside our component. This will make Vue react to changes every time a user types a character and give us methods to deal with that. <code class="highlighter-rouge">searchPokemon</code> will execute anytime the input is submitted, while <code class="highlighter-rouge">updateSuggestionsList</code> will execute immediately anytime our user types something.</p>
+<p>For the Serch input, inside the <code class="language-plaintext highlighter-rouge">&lt;template&gt;</code> section of <code class="language-plaintext highlighter-rouge">Main.vue</code>, we can take advantage of Buefy’s custom components (hence the “b-“ before <code class="language-plaintext highlighter-rouge">button</code> and <code class="language-plaintext highlighter-rouge">input</code>) and use the <strong>Vue directive</strong> <code class="language-plaintext highlighter-rouge">v-model</code> to bind whatever’s typed in the search form to a data object inside our component. This will make Vue react to changes every time a user types a character and give us methods to deal with that. <code class="language-plaintext highlighter-rouge">searchPokemon</code> will execute anytime the input is submitted, while <code class="language-plaintext highlighter-rouge">updateSuggestionsList</code> will execute immediately anytime our user types something.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
   <span class="nt">&lt;b-input</span>
@@ -240,7 +239,7 @@
 <span class="nt">&lt;/template&gt;</span>
 </code></pre></div></div>
 
-<p>Now it’s time to bind these values to the data in our <code class="highlighter-rouge">Main.vue</code> in the <code class="highlighter-rouge">&lt;script&gt;</code> section. We’ll also build the structure of our <code class="highlighter-rouge">result</code> object inside the component — we’ll use this to store all the information we’ll get back from the API and pass it onto our other component, <code class="highlighter-rouge">PokemonCard.vue</code>, which will react to changes and re-render whenever we get a new result. Interesting to notice that, even though we’re not using TypeScript here, Vue requires us to specify what kind of data do expect from each property.</p>
+<p>Now it’s time to bind these values to the data in our <code class="language-plaintext highlighter-rouge">Main.vue</code> in the <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> section. We’ll also build the structure of our <code class="language-plaintext highlighter-rouge">result</code> object inside the component — we’ll use this to store all the information we’ll get back from the API and pass it onto our other component, <code class="language-plaintext highlighter-rouge">PokemonCard.vue</code>, which will react to changes and re-render whenever we get a new result. Interesting to notice that, even though we’re not using TypeScript here, Vue requires us to specify what kind of data do expect from each property.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
   <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Main</span><span class="dl">"</span><span class="p">,</span>
@@ -286,7 +285,7 @@
   <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">));</span>
 </code></pre></div></div>
 
-<p>Based on this same structure, we can build the Search function as a <code class="highlighter-rouge">method</code> in our <code class="highlighter-rouge">Main.vue</code> component:</p>
+<p>Based on this same structure, we can build the Search function as a <code class="language-plaintext highlighter-rouge">method</code> in our <code class="language-plaintext highlighter-rouge">Main.vue</code> component:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">/// .. components, props, data</span>
 <span class="nx">methods</span><span class="p">:</span> <span class="p">{</span>
@@ -318,7 +317,7 @@
 
 <h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="passing-data-to-a-child-component">Passing data to a child component</h3>
 
-<p>Inside our <code class="highlighter-rouge">PokemonCard.vue</code> component, we need to be prepared to receive all this data from <code class="highlighter-rouge">Main.vue</code>. The easiest way of accomplishing that is by using <code class="highlighter-rouge">props</code>, a type of data specifically designed to pass information from parent to child component. But first we need to initialize it inside <code class="highlighter-rouge">PokemonCard.vue</code>:</p>
+<p>Inside our <code class="language-plaintext highlighter-rouge">PokemonCard.vue</code> component, we need to be prepared to receive all this data from <code class="language-plaintext highlighter-rouge">Main.vue</code>. The easiest way of accomplishing that is by using <code class="language-plaintext highlighter-rouge">props</code>, a type of data specifically designed to pass information from parent to child component. But first we need to initialize it inside <code class="language-plaintext highlighter-rouge">PokemonCard.vue</code>:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
     <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">PokemonCard</span><span class="dl">"</span><span class="p">,</span>
@@ -333,7 +332,7 @@
 <span class="p">};</span>
 </code></pre></div></div>
 
-<p>Then we can reference the child component inside our parent <code class="highlighter-rouge">Main.vue</code>, using again the <code class="highlighter-rouge">v-bind</code> directive to make it react to data changes. This way, every time a new Search is submitted and our parent component data is updated, the <code class="highlighter-rouge">PokemonCard</code> component will automatically re-render with little to no effort on our side.</p>
+<p>Then we can reference the child component inside our parent <code class="language-plaintext highlighter-rouge">Main.vue</code>, using again the <code class="language-plaintext highlighter-rouge">v-bind</code> directive to make it react to data changes. This way, every time a new Search is submitted and our parent component data is updated, the <code class="language-plaintext highlighter-rouge">PokemonCard</code> component will automatically re-render with little to no effort on our side.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;PokemonCard</span> 
     <span class="na">v-bind:name=</span><span class="s">"this.result.name"</span>

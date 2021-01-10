@@ -23,14 +23,13 @@
   <meta property="og:title" content="HTML email 101 for Web Developers">
   <meta property="og:type" content="article">
   <meta property="og:description" content="I first started building emails out of a job necessity more than anything else. From one day to another, I was suddenly spinning in a loop of marketing campaigns and client requests. My only way of surviving was adapting and trying to learn as much as I could while still delivering it.
-
 "/>
   
   
   <meta property="article:published_time" content="2019-07-29T00:00:00-04:00">
-  <meta property="article:author" content="http://localhost:4000/about/">
+  <meta property="article:author" content="/about/">
   
-  <meta property="og:url" content="http://localhost:4000/2019/07/29/html-email-101-for-web-developers.html" />
+  <meta property="og:url" content="/2019/07/29/html-email-101-for-web-developers.html" />
   
   <meta itemprop="keywords" content="" />
   
@@ -179,7 +178,7 @@
 
 <h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="spoiler-alert-say-goodbye-to-fancy-typefaces">Spoiler alert: say goodbye to fancy typefaces</h3>
 
-<p>One of the biggest frustrations I came across as a web developer diving into the email marketing world was the inability to use custom fonts. Importing web fonts via <code class="highlighter-rouge">@import</code> may work on a few email clients, but one valuable lesson I learned after some years hard working on HTML templates is <strong>to avoid limited compatibility solutions</strong>.</p>
+<p>One of the biggest frustrations I came across as a web developer diving into the email marketing world was the inability to use custom fonts. Importing web fonts via <code class="language-plaintext highlighter-rouge">@import</code> may work on a few email clients, but one valuable lesson I learned after some years hard working on HTML templates is <strong>to avoid limited compatibility solutions</strong>.</p>
 
 <p>It’s not a rule of thumbs, but working with solutions that only apply to certain scenarios is a good way to dive into a fallback hell. Let’s say your email campaign looks really good with Proxima Nova loaded via Google Fonts, but does it really work when this styling rule does not apply and all you have are system native fonts? You’re creating a problem you did not have in the first place. You’re better off with a campaign that looks <em>really good</em> with native fonts and then progresses to custom typefaces <em>if</em> they are supported. <strong>If a client approves a creative with Proxima Nova, be assured that they’ll not be happy when they see Arial displayed in Outlook 2013.</strong></p>
 
@@ -191,7 +190,7 @@
 
 <p>The tech ecosystem is dynamic, we all love it, but sometimes it can be a hassle to handle every single new app update out there.</p>
 
-<p>I recently stumbled upon a bug on Samsung devices running the stock email app that adds a weird margin to the right of every single email. Testing and researching these little bugs is time-consuming, but thankfully I found that I needed to add a simple CSS rule to my <code class="highlighter-rouge">&lt;head&gt;</code> element and it’d do the trick.</p>
+<p>I recently stumbled upon a bug on Samsung devices running the stock email app that adds a weird margin to the right of every single email. Testing and researching these little bugs is time-consuming, but thankfully I found that I needed to add a simple CSS rule to my <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> element and it’d do the trick.</p>
 
 <p>Who knows what will happen on the next update in your client’s preferred email client? Keeping up with these iterations is necessary to maintain consistency and deliver a good product.</p>
 
@@ -199,17 +198,17 @@
 
 <p>I have a fair amount of experience with Salesforce, one of the biggest (and more expensive) integrated marketing solutions out there. But many others use Mailchimp, Campaign Monitor, Sendinblue and many other custom solutions. It depends on the company you’re working for and how their marketing team prefers to do business. These platforms are a fundamental part of how email campaigns work and they allow marketers to integrate user journeys, customer segmentation, and tracking information in the code you’ll be delivering.</p>
 
-<p>Each platform has its own sets of features and limitations – Salesforce, as an example, does not allow full source code editing (but keeps <code class="highlighter-rouge">&lt;style&gt;</code> tags in the body) and has a powerful scripting platform (AMPscript) that lets you use variables to customize the email content based on its subscribers. Other platforms will allow full source code editing but will blacklist several HTML tags and styling rules that will limit how further you can go. You can’t expect these platforms to change in the short term and learning how to deal with these limitations will only come with time exploring these tools.</p>
+<p>Each platform has its own sets of features and limitations – Salesforce, as an example, does not allow full source code editing (but keeps <code class="language-plaintext highlighter-rouge">&lt;style&gt;</code> tags in the body) and has a powerful scripting platform (AMPscript) that lets you use variables to customize the email content based on its subscribers. Other platforms will allow full source code editing but will blacklist several HTML tags and styling rules that will limit how further you can go. You can’t expect these platforms to change in the short term and learning how to deal with these limitations will only come with time exploring these tools.</p>
 
 <h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="how-about-outlook">How about Outlook?</h3>
 
 <p>Each email client has its own limitations that you have to be prepared for in the long run, but Outlook is still the main culprit. It has its own way of dealing with formatting and styling, all because it uses <em>Word</em> as its rendering engine. This strategy enabled amazing possibilities for users, who can copy and paste directly from Microsoft Office in Outlook and keep their formatting — however, it’s a nightmare for anyone willing to master Email Design and Development.</p>
 
-<p>The latest Outlook builds for Windows and MacOS are getting better at understanding modern HTML syntax, but they still can’t compare to most web clients when it comes to rendering layouts properly. Simple styling rules like <code class="highlighter-rouge">border-radius</code> are completely ignored. What looked great on Apple Mail suddenly looks a little too flat in Outlook for Windows. You have to be technically skilled and <em>psychologically prepared</em> for that.</p>
+<p>The latest Outlook builds for Windows and MacOS are getting better at understanding modern HTML syntax, but they still can’t compare to most web clients when it comes to rendering layouts properly. Simple styling rules like <code class="language-plaintext highlighter-rouge">border-radius</code> are completely ignored. What looked great on Apple Mail suddenly looks a little too flat in Outlook for Windows. You have to be technically skilled and <em>psychologically prepared</em> for that.</p>
 
 <h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="but-its-not-only-outlook">But it’s not only Outlook</h3>
 
-<p>Every single email client will bring different challenges to be the table. Web Gmail, as an example, will strip every single <code class="highlighter-rouge">&lt;style&gt;</code> tag that’s not in the <code class="highlighter-rouge">&lt;head&gt;</code> for security reasons, so you have to make sure your campaign looks good with inline rules. The app will respect these rules though, so it’s a good strategy to have in mind to ensure responsiveness.</p>
+<p>Every single email client will bring different challenges to be the table. Web Gmail, as an example, will strip every single <code class="language-plaintext highlighter-rouge">&lt;style&gt;</code> tag that’s not in the <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> for security reasons, so you have to make sure your campaign looks good with inline rules. The app will respect these rules though, so it’s a good strategy to have in mind to ensure responsiveness.</p>
 
 <h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="alt-text-is-fundamental">Alt text is fundamental</h3>
 
@@ -217,7 +216,7 @@
 
 <h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="inline-is-king-here">Inline is king here</h3>
 
-<p>Inline styles are not the best practice when it comes to web pages and apps, but they’re an essential part of making HTML emails come to life since several email clients will strip your <code class="highlighter-rouge">&lt;style&gt; </code> tags and ignore any CSS imported with  <code class="highlighter-rouge">&lt;link&gt;</code>. I prefer to do most of the process manually, because 1) I’m used to it already and 2) it gives me more granular control over what’s happening. But <a href="https://templates.mailchimp.com/resources/inline-css/" target="_blank">Mailchimp has a great inliner tool</a> that will make your life way easier if you’re just starting.</p>
+<p>Inline styles are not the best practice when it comes to web pages and apps, but they’re an essential part of making HTML emails come to life since several email clients will strip your <code class="language-plaintext highlighter-rouge">&lt;style&gt; </code> tags and ignore any CSS imported with  <code class="language-plaintext highlighter-rouge">&lt;link&gt;</code>. I prefer to do most of the process manually, because 1) I’m used to it already and 2) it gives me more granular control over what’s happening. But <a href="https://templates.mailchimp.com/resources/inline-css/" target="_blank">Mailchimp has a great inliner tool</a> that will make your life way easier if you’re just starting.</p>
 
 <h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="example-coding-a-responsive-cta-button">Example: coding a responsive CTA button</h3>
 
@@ -238,7 +237,7 @@
 <span class="nt">&lt;/table&gt;</span>
 </code></pre></div></div>
 
-<p>Considering a 600px wide email, there is one table row on each side of the main <code class="highlighter-rouge">&lt;tr&gt;</code> with 35% width each, letting <code class="highlighter-rouge">width="*"</code> do its job and give whatever’s space is left to the main button (in this case, 30% or 180px). The <code class="highlighter-rouge">mobile-hidden</code> class lives in the head of the email set to <code class="highlighter-rouge">display: none</code>. It’s ignored by most desktop clients, but it does render in Gmail and Apple Mail, which means that these two “spacing” table rows will disappear and provide a nice full width button. Remember the issue with custom fonts? Well, Gmail lets you call its own <code class="highlighter-rouge">Google Sans</code> in the browser which is a nice typace to have in case clients are using it. That can change anytime though, and I cannot hide my excitement to know that these platforms are ever changing for the better.</p>
+<p>Considering a 600px wide email, there is one table row on each side of the main <code class="language-plaintext highlighter-rouge">&lt;tr&gt;</code> with 35% width each, letting <code class="language-plaintext highlighter-rouge">width="*"</code> do its job and give whatever’s space is left to the main button (in this case, 30% or 180px). The <code class="language-plaintext highlighter-rouge">mobile-hidden</code> class lives in the head of the email set to <code class="language-plaintext highlighter-rouge">display: none</code>. It’s ignored by most desktop clients, but it does render in Gmail and Apple Mail, which means that these two “spacing” table rows will disappear and provide a nice full width button. Remember the issue with custom fonts? Well, Gmail lets you call its own <code class="language-plaintext highlighter-rouge">Google Sans</code> in the browser which is a nice typace to have in case clients are using it. That can change anytime though, and I cannot hide my excitement to know that these platforms are ever changing for the better.</p>
 
 <h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="bottom-line-coding-a-good-responsive-email-is-hard-and-it-takes-time">Bottom line: coding a good responsive email is hard and it takes time</h3>
 

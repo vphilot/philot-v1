@@ -23,14 +23,13 @@
   <meta property="og:title" content="Building an Ancestry chart with Vue and Chart.js">
   <meta property="og:type" content="article">
   <meta property="og:description" content="After scoring a nice deal on 23andme and going through the useless (but utterly entertaining) journey of finding out more about my origins, I couldn’t wait to replicate the nice pie graphs 23andme shows on their (very nice) web app.
-
 "/>
   
   
   <meta property="article:published_time" content="2019-12-18T00:00:00-05:00">
-  <meta property="article:author" content="http://localhost:4000/about/">
+  <meta property="article:author" content="/about/">
   
-  <meta property="og:url" content="http://localhost:4000/2019/12/18/anchestry-chart-vue-chartjs.html" />
+  <meta property="og:url" content="/2019/12/18/anchestry-chart-vue-chartjs.html" />
   
   <meta itemprop="keywords" content="" />
   
@@ -185,7 +184,7 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm <span class="nb">install </span>vue-chartjs chart.js <span class="nt">--save</span>
 </code></pre></div></div>
 
-<p>I needed one simple component to make it work: <code class="highlighter-rouge">AncestryChart.vue</code>, which made the final folder structure pretty simple:</p>
+<p>I needed one simple component to make it work: <code class="language-plaintext highlighter-rouge">AncestryChart.vue</code>, which made the final folder structure pretty simple:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├── src
 │   ├── main.js
@@ -204,7 +203,7 @@
 </code></pre></div></div>
 <h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="creating-the-chart-component">Creating the Chart component</h3>
 
-<p>Inside <code class="highlighter-rouge">App.vue</code>, we need to import our <code class="highlighter-rouge">AncestryChart.vue</code> component and register it for future use:</p>
+<p>Inside <code class="language-plaintext highlighter-rouge">App.vue</code>, we need to import our <code class="language-plaintext highlighter-rouge">AncestryChart.vue</code> component and register it for future use:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">AncestryChart</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./components/AncestryChart.vue</span><span class="dl">'</span>
 
@@ -216,7 +215,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>And now inside <code class="highlighter-rouge">AncestryChart.vue</code> we need to setup <code class="highlighter-rouge">vue-chartjs</code> properly. I chose the Doughnut chart and imported the mixins so we can bind data accurately.</p>
+<p>And now inside <code class="language-plaintext highlighter-rouge">AncestryChart.vue</code> we need to setup <code class="language-plaintext highlighter-rouge">vue-chartjs</code> properly. I chose the Doughnut chart and imported the mixins so we can bind data accurately.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Doughnut</span><span class="p">,</span> <span class="nx">mixins</span> <span class="p">}</span>  <span class="k">from</span> <span class="dl">'</span><span class="s1">vue-chartjs</span><span class="dl">'</span>
 
@@ -236,7 +235,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>As you can see above, we need two main props to make our chart render: <code class="highlighter-rouge">chartData</code> and <code class="highlighter-rouge">options</code>. Both of them will be sent to this component by our main <code class="highlighter-rouge">App.vue</code>. I will not go through the options object since it’s just a simple set of extensive configuration options, but the next sections will explain how to set up our chart data properly.</p>
+<p>As you can see above, we need two main props to make our chart render: <code class="language-plaintext highlighter-rouge">chartData</code> and <code class="language-plaintext highlighter-rouge">options</code>. Both of them will be sent to this component by our main <code class="language-plaintext highlighter-rouge">App.vue</code>. I will not go through the options object since it’s just a simple set of extensive configuration options, but the next sections will explain how to set up our chart data properly.</p>
 
 <h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="data-structure">Data structure</h3>
 
@@ -287,12 +286,12 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm <span class="nb">install </span>d3-fetch <span class="nt">--save</span>
 </code></pre></div></div>
 
-<p>After installing <code class="highlighter-rouge">d3-fetch</code>, we need to make it available inside <code class="highlighter-rouge">App.vue</code>. Using external libraries inside Vue components can be done with the following import statement:</p>
+<p>After installing <code class="language-plaintext highlighter-rouge">d3-fetch</code>, we need to make it available inside <code class="language-plaintext highlighter-rouge">App.vue</code>. Using external libraries inside Vue components can be done with the following import statement:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">d3</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../node_modules/d3-fetch/dist/d3-fetch</span><span class="dl">'</span>
 </code></pre></div></div>
 
-<p>The computed data we’ll extract from the CSV file needs somewhere to live inside the main App component, and we’ll use the <code class="highlighter-rouge">data</code> object for that””</p>
+<p>The computed data we’ll extract from the CSV file needs somewhere to live inside the main App component, and we’ll use the <code class="language-plaintext highlighter-rouge">data</code> object for that””</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">{</span>
@@ -303,7 +302,7 @@
   <span class="p">}</span>
  <span class="p">}</span>
 </code></pre></div></div>
-<p>We’ll now start parsing the CSV data by creating a new function inside <code class="highlighter-rouge">methods</code>:</p>
+<p>We’ll now start parsing the CSV data by creating a new function inside <code class="language-plaintext highlighter-rouge">methods</code>:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">methods</span><span class="p">:</span> <span class="p">{</span>
     
@@ -366,16 +365,16 @@
     <span class="p">},</span>
   <span class="p">}</span>
 </code></pre></div></div>
-<p>A quick overview of what’s happening above: there’s a short function named <code class="highlighter-rouge">readCSV()</code> that takes a CSV file as an argument and uses d3-fetch to read the it and output an array of objects. <code class="highlighter-rouge">readCSV</code> will then call <code class="highlighter-rouge">parseData()</code>, passing the outcome as an argument. From there on we’ll do all the data handling necessary to find unique instances of ancestry regions and sort them by ocurrence count.</p>
+<p>A quick overview of what’s happening above: there’s a short function named <code class="language-plaintext highlighter-rouge">readCSV()</code> that takes a CSV file as an argument and uses d3-fetch to read the it and output an array of objects. <code class="language-plaintext highlighter-rouge">readCSV</code> will then call <code class="language-plaintext highlighter-rouge">parseData()</code>, passing the outcome as an argument. From there on we’ll do all the data handling necessary to find unique instances of ancestry regions and sort them by ocurrence count.</p>
 
-<p>Everything left to do now is only implement the <code class="highlighter-rouge">AncestryChart.vue</code> component inside <code class="highlighter-rouge">App.vue</code> and bind the dataset:</p>
+<p>Everything left to do now is only implement the <code class="language-plaintext highlighter-rouge">AncestryChart.vue</code> component inside <code class="language-plaintext highlighter-rouge">App.vue</code> and bind the dataset:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;AncestryChart</span> <span class="na">:chartData=</span><span class="s">"this.dataset"</span> <span class="na">:options=</span><span class="s">"this.options"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="learnings">Learnings</h3>
 
-<p>This simple project was fun to build and interesting in terms of learning outcomes. I discovered I still need to explore more data structures (a simple CSV was quite a hassle to parse!) and explore other chart libraries. Chart.js is pretty comprehensive and has a ton of customization options, however it’s hard to fine tune its styling and responsiveness since it’s rendered inside a <code class="highlighter-rouge">&lt;canvas&gt;</code> element. <a href="https://gracious-cori-4bd380.netlify.com/">You can see the project live here.</a>.</p>
+<p>This simple project was fun to build and interesting in terms of learning outcomes. I discovered I still need to explore more data structures (a simple CSV was quite a hassle to parse!) and explore other chart libraries. Chart.js is pretty comprehensive and has a ton of customization options, however it’s hard to fine tune its styling and responsiveness since it’s rendered inside a <code class="language-plaintext highlighter-rouge">&lt;canvas&gt;</code> element. <a href="https://gracious-cori-4bd380.netlify.com/">You can see the project live here.</a>.</p>
 
 
                 </div>

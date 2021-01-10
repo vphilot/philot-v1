@@ -1,0 +1,23 @@
+I"@<p>I’ve been trought a pickle these days trying to make a simple HTML5 video with a MP4 source load on iOS. It just wouldn’t load.</p>
+
+<h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="long-story-short">Long story short</h3>
+
+<ul class="has-bullet">
+  <li>Run your source file through Adobe Media Encoder</li>
+  <li>Choose <strong><em>Mobile 1080 HD preset</em></strong></li>
+  <li>On Video Settings, click Match Source to keep the original dimensions</li>
+  <li>Still in Video Settings, uncheck the checkbox that locks <strong><em>Field Order</em></strong> and change it to <strong><em>Progressive</em></strong></li>
+  <li>Play around with the target bitrate until your video is below <strong><em>50mb</em></strong></li>
+  <li>Render the queue</li>
+</ul>
+
+<h3 class="intro title is-3 has-text-weight-normal has-line-spacing-tall" id="to-sum-up-the-video-should">To sum up, the video should:</h3>
+
+<ul class="has-bullet">
+  <li>Be rendered with Field Order = progressive</li>
+  <li>Be below 50mb in total size</li>
+</ul>
+
+<p>If you ever googled your issue and ended up in a StackOverflow thread reading about server headers and response codes you never heard of, maybe this would help. I hope the solution worked on your end! <a href="https://twitter.com/vphilot/"><strong>Maybe let me know ?</strong></a></p>
+
+:ET

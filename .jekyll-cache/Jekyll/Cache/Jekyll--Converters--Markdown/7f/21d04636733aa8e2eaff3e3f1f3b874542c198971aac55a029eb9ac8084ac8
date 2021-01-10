@@ -1,0 +1,2 @@
+I"<<p>Functional CSS (or Atomic CSS, Utility-first CSS, and so forth) is a thing and it looks like it’s here to stay. My first trials with this technology were quite lazy attempts to make my styling more organized and utilitarian. There’s something that always bothered me with the regular approach to CSS classes and their taxonomy: <strong>elements accumulate and transform their meanings over time</strong>. In my opinion, no matter how tidy and organized your styling is, even BEM will let you down when you need last minute tweaks or a super urgent new feature.</p>
+:ET
