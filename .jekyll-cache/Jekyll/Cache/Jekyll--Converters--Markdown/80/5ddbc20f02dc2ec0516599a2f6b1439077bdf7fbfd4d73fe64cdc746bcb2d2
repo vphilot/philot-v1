@@ -1,7 +1,0 @@
-I"“<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;picture</span> <span class="na">class=</span><span class="s">""</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;source</span> <span class="na">srcset=</span><span class="s">"large.jpg"</span> <span class="na">media=</span><span class="s">"(min-width: desktop breakpoint)"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;source</span> <span class="na">srcset=</span><span class="s">"small.jpg"</span> <span class="na">media=</span><span class="s">"(max-width: mobile breakpoint)"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">""</span> <span class="na">src=</span><span class="s">"fallback.jpg"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/picture&gt;</span>
-</code></pre></div></div>
-:ET

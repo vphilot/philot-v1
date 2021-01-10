@@ -1,3 +1,0 @@
-I"><p>Grabbed from <a href="https://nystudio107.com/blog/the-css-background-image-property-as-an-anti-pattern">NYStudio</a>. This snippet provides: lazy load­ing if the brows­er sup­ports it, webp if the brows­er sup­ports it, and 
-a srcset of opti­mized respon­sive images that the brows­er can choose from.</p>
-:ET
