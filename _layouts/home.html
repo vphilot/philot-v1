@@ -96,7 +96,7 @@ layout: default
                 </div>
         <div class="column is-6-desktop is-12-mobile">
             <h1 class="title is-0 has-spacing-sm">Work</h1>
-            {% assign works = site.works | sort: 'order' | reverse %}
+            {% assign works = site.works | sort: 'order' %}
             {% for work in works limit:3 %}
             <a href="{{ work.url }}">
                 <div class="has-home-hover-animation">
