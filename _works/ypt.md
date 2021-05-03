@@ -6,11 +6,12 @@ tools: Adobe XD, Illustrator, InVision
 bgcolor: '#B7FCD9'
 external: https://invis.io/G6GST6OYBHK
 featureimg: ../assets/images/work/ypt-feature.png
-order: 2
+order: 4
 ---
 
-
-### YPT was receiving many complaints and a load of phonecalls from people who could not understand their mobile ticketing system. The experience was confusing, annoying, and frustrating. No one likes frustrated users.
+## Disclaimer: this is a Bootcamp project.
+{: .intro .title .is-4 .has-text-weight-light .has-line-spacing-tall}
+### YPT had some customers who could not understand their mobile ticketing system. No one likes frustrated users.
 {: .intro .title .is-4 .has-text-weight-normal .has-line-spacing-tall}
 
 Young People's Theatre gives the opportunity to many actors, children, and schools to experience plays that explore educational and ethical values. What they were lacking was some treatment on their website an their mobile ticketing experience. As part of the Advanced UX course on the INM program, this project was developed with a clinical eye for user satisfaction. I started off by making a couple of interviews and user testing with people who usually buy the tickets for their children: parents.

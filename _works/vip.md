@@ -5,7 +5,7 @@ category: web development
 tools: Adobe XD, HTML5, Sass, JavaScript
 bgcolor: '#cfe2ff'
 featureimg: ../assets/images/work/vip-feature.png
-order: 4
+order: 1
 ---
 The Cineplex VIP program is Canada’s leading premium experience in movie theatres. Working directly with the VIP marketing team, I was asked to come up with a more elegant and functional solution to the online menu they had implemented a few years ago.
 
@@ -14,7 +14,7 @@ The main issue was how extensive the VIP Menu is &mdash; a long scroll of items 
 ### Layout
 {: .intro .title .is-2 .has-text-weight-normal .has-line-spacing-tall}
 
-Considering the large amount of information we had to display, quick scanning for items was a fundamental part of accessing the page. I wanted users to immediately be able to understand how information is structured so they could jump to decision making right away. 
+Considering the large amount of information we had to display, quick scanning for items was a fundamental part of accessing the page. I wanted users to immediately be able to understand how information is structured so they could jump to decision making right away.
 
 {% include webp.html
 webp = "../assets/images/work/vip-2.webp"
@@ -61,7 +61,7 @@ alt = "Revamped accordion layout"
 caption = true
 %}
 
-After some research, I understood that the accordion functionality was still the best one to go here. Being able to expand and collapse sections was a good way of letting users know where they were in the extensive list, while providing a quick access to another categories. 
+After some research, I understood that the accordion functionality was still the best one to go here. Being able to expand and collapse sections was a good way of letting users know where they were in the extensive list, while providing a quick access to another categories.
 
 {% include webp.html
 webp = "../assets/images/work/vip-7.webp"

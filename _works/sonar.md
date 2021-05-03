@@ -7,10 +7,12 @@ libraries: particles.js
 bgcolor: '#FCC3B7'
 external: https://clever-haibt-741d5a.netlify.com/
 featureimg: ../assets/images/work/sd-feature.png
-order: 1
+order: 5
 ---
 
-### I designed and developed this wep app as the final project for the Web Development II course. It was a great opportunity to challenge my skills as an aspiring front end developer and play around with different web technologies and Js libraries.
+## Disclaimer: this is a Bootcamp project.
+{: .intro .title .is-4 .has-text-weight-light .has-line-spacing-tall}
+### I designed and developed this wep app as the final project for the Web Development II course. It was a great opportunity to challenge my skills as an aspiring front end developer and play around with different web technologies and JS libraries.
 {: .intro .title .is-4 .has-text-weight-normal .has-line-spacing-tall}
 
 {% include webp.html
