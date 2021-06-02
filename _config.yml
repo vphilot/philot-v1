@@ -35,5 +35,9 @@ defaults:
 plugins:
   - jekyll-feed
 
+name: philot.ca
+description: thoughts
+url: https://philot.ca
+
 # Server Config options
 #livereload: true    # You no longer need to include --livereload
