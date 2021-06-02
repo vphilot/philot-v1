@@ -15,7 +15,7 @@ collections:
     output: true
   snippets:
     output: true
-  
+
 defaults:
   - scope:
       path: ""
@@ -31,6 +31,9 @@ defaults:
       path: ""
     values:
       layout: "default"
+
+plugins:
+  - jekyll-feed
 
 # Server Config options
 #livereload: true    # You no longer need to include --livereload
