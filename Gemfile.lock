@@ -68,6 +68,3 @@ DEPENDENCIES
   jekyll
   jekyll-feed
   webrick (~> 1.7)
-
-BUNDLED WITH
-   2.0.2
