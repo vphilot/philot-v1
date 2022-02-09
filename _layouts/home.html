@@ -9,7 +9,7 @@ layout: default
             </div>
             <div class="column is-2-desktop is-12-mobile">
                 <a href="/about" class="is-size-3">
-                    (oh, hi!)
+                    (hi! 👋)
                     <svg x="0px" y="0px" viewBox="0 0 200 10">
                         <polyline points="194,0 199,5 194,10 " />
                         <line x1="0" y1="5" x2="199" y2="5" />
@@ -25,11 +25,9 @@ layout: default
 
 
         <div class="columns is-mobile is-multiline has-spacing-sm reverse-row-order">
-                <div class="column is-6-desktop is-12-mobile">
-                        <picture>
-                            <img
-                            sizes="(max-width: 1000px) 100vw, 1000px"
-                            srcset="
+            <div class="column is-6-desktop is-12-mobile">
+                <picture>
+                    <img sizes="(max-width: 1000px) 100vw, 1000px" srcset="
                             ../assets/images/home/home-thoughts_scale,w_200.jpg 200w,
                             ../assets/images/home/home-thoughts_scale,w_389.jpg 389w,
                             ../assets/images/home/home-thoughts_scale,w_539.jpg 539w,
@@ -38,10 +36,9 @@ layout: default
                             ../assets/images/home/home-thoughts_scale,w_887.jpg 887w,
                             ../assets/images/home/home-thoughts_scale,w_985.jpg 985w,
                             ../assets/images/home/home-thoughts_scale,w_1000.jpg 1000w"
-                            src="../assets/images/home/home-thoughts_scale,w_1000.jpg"
-                            alt="graphics for blog">
-                            </picture>
-                    </div>
+                        src="../assets/images/home/home-thoughts_scale,w_1000.jpg" alt="graphics for blog">
+                </picture>
+            </div>
             <div class="column is-6-desktop is-12-mobile">
                 <h1 class="title is-0 has-spacing-sm">Thoughts</h1>
                 {% assign posts = site.posts | sort: 'date' | reverse %}
@@ -78,10 +75,8 @@ layout: default
 
         <div class="columns is-mobile is-multiline has-spacing-sm reverse-row-order-desktop">
             <div class="column is-6-desktop is-12-mobile">
-                    <picture>
-                        <img
-                        sizes="(max-width: 1000px) 100vw, 1000px"
-                        srcset="
+                <picture>
+                    <img sizes="(max-width: 1000px) 100vw, 1000px" srcset="
                         ../assets/images/home/home-works_scale,w_200.jpg 200w,
                         ../assets/images/home/home-works_scale,w_404.jpg 404w,
                         ../assets/images/home/home-works_scale,w_578.jpg 578w,
@@ -90,47 +85,46 @@ layout: default
                         ../assets/images/home/home-works_scale,w_893.jpg 893w,
                         ../assets/images/home/home-works_scale,w_977.jpg 977w,
                         ../assets/images/home/home-works_scale,w_1000.jpg 1000w"
-                        src="../assets/images/home/home-works_scale,w_1000.jpg"
-                        alt="graphics for works">
-                        </picture>
-                </div>
-        <div class="column is-6-desktop is-12-mobile">
-            <h1 class="title is-0 has-spacing-sm">Work</h1>
-            {% assign works = site.works | sort: 'order' %}
-            {% for work in works limit:3 %}
-            <a href="{{ work.url }}">
-                <div class="has-home-hover-animation">
-                    <h1 class="title is-1 has-text-weight-light has-spacing-sm has-padding-t-4">
-                        {{ work.title }}
-                    </h1>
-                    <div class="columns is-mobile is-multiline has-spacing-sm">
-                        <div class="column is-8-desktop">
-                            <p class="is-size-7 has-border-black">{{ work.category }}</p>
-                        </div>
-                        <div class="column is-2-desktop">
-                            <p class="is-size-7 has-border-black">{{ work.year }}</p>
-                        </div>
-                        <div class="column is-2-desktop">
-                            <p class="is-size-7 has-border-black">Read
-                                <i aria-hidden="true" class="icon icon-right-open-mini">&#xe801;</i>
+                        src="../assets/images/home/home-works_scale,w_1000.jpg" alt="graphics for works">
+                </picture>
+            </div>
+            <div class="column is-6-desktop is-12-mobile">
+                <h1 class="title is-0 has-spacing-sm">Work</h1>
+                {% assign works = site.works | sort: 'order' %}
+                {% for work in works limit:3 %}
+                <a href="{{ work.url }}">
+                    <div class="has-home-hover-animation">
+                        <h1 class="title is-1 has-text-weight-light has-spacing-sm has-padding-t-4">
+                            {{ work.title }}
+                        </h1>
+                        <div class="columns is-mobile is-multiline has-spacing-sm">
+                            <div class="column is-8-desktop">
+                                <p class="is-size-7 has-border-black">{{ work.category }}</p>
+                            </div>
+                            <div class="column is-2-desktop">
+                                <p class="is-size-7 has-border-black">{{ work.year }}</p>
+                            </div>
+                            <div class="column is-2-desktop">
+                                <p class="is-size-7 has-border-black">Read
+                                    <i aria-hidden="true" class="icon icon-right-open-mini">&#xe801;</i>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </a>
-            {% endfor %}
-            <div class="column is-5-desktop is-12-mobile has-margin-bt-3 is-paddingless">
-                <a href="/works" class="is-size-3">
-                    All projects
-                    <svg aria-hidden="true" x="0px" y="0px" viewBox="0 0 200 10">
-                        <polyline points="194,0 199,5 194,10 " />
-                        <line x1="0" y1="5" x2="199" y2="5" />
-                    </svg>
                 </a>
+                {% endfor %}
+                <div class="column is-5-desktop is-12-mobile has-margin-bt-3 is-paddingless">
+                    <a href="/works" class="is-size-3">
+                        All projects
+                        <svg aria-hidden="true" x="0px" y="0px" viewBox="0 0 200 10">
+                            <polyline points="194,0 199,5 194,10 " />
+                            <line x1="0" y1="5" x2="199" y2="5" />
+                        </svg>
+                    </a>
+                </div>
             </div>
+
+
         </div>
-
-
-    </div>
 
 
     </div>
